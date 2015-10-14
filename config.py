@@ -1,0 +1,3 @@
+WTF_CSRF_ENABLED = True
+WTF_CSRF_METHODS = ['DELETE']
+SECRET_KEY = 'i-will-never-tell'
