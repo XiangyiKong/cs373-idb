@@ -9,7 +9,8 @@ This is where we will store our swe project
 ```
 $> pip install -r requirements.txt
 ```
-3. Run it with 
+3. Make sure you have a copy of local.py or create it in the app/ directory. This file currently contains the marvel private api key and the flask secret key.
+4. Run it with 
 ```
-python run.py
+$> python run.py
 ```
