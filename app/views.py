@@ -10,3 +10,7 @@ def hello_world():
 def characters():
 	character_list = get_list_of_characters()
 	return render_template('character_list.html', title='Marvel List of characters', character_list=character_list['data']['results'])
+
+@app.route('/characters/<character_id>')
+def characters():
+	return render_template('character.html', title='Characters')

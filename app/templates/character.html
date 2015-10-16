@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+Characters
+<div class="box-table">
+    <table class="sortable">
+        <thead>
+            <tr>
+            	<th>Photos</th>
+                <th>Name</th>
+                <th>URls</th>
+                <th>Comics</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for attributes in character %}
+                    <tr>
+                        <td>{{ attribute }}</a></td>
+                    </tr>
+                {% endfor %}
+       		</tbody>
+    </table>
+</div>
+{% endblock %}
