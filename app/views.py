@@ -12,5 +12,5 @@ def characters():
 	return render_template('character_list.html', title='Marvel List of characters', character_list=character_list['data']['results'])
 
 @app.route('/characters/<character_id>')
-def characters():
+def single_character():
 	return render_template('character.html', title='Characters')
