@@ -23,6 +23,6 @@ def get_list_of_characters(name=None, nameStartsWith=None, limit=None, offset=No
 	return r.json()
 
 def get_single_character(character_id):
-	query_string = app.config['BASE_URL'] + 'characters/' + str(character_id)
+	query_string = app.config['BASE_URL'] + 'characters/' + str(character_id) + create_api_params()
 	r = requests.get(query_string)
 	return r.json()
