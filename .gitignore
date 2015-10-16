@@ -57,5 +57,12 @@ docs/_build/
 # PyBuilder
 target/
 
+# OS X generated files 
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+*.DS_Store
+
 local.py
 rootpass.txt

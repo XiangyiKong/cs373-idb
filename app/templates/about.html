@@ -1,0 +1,80 @@
+{% extends "base.html" %}
+
+{% block content %}
+<p>
+We are BitsPlease!!<br>
+This team consisted of:<br>
+&emsp;&emsp;&emsp;Erick Cardenas<br>
+&emsp;&emsp;&emsp;Wei-Chieh Chen<br>
+&emsp;&emsp;&emsp;Xiangyi Kong<br>
+&emsp;&emsp;&emsp;Nicholas Pereira<br>
+&emsp;&emsp;&emsp;Xingrong Wu<br>
+</p>
+
+<p>
+<table border="1" style="width:100%">
+  <tr>
+    <td>Erick Cardenas</td>
+    <td><img src="{{ url_for('static', filename='img/Nicholas_Pereira.jpeg') }}" alt="Nicholas Pereira" style="width:200px;height:200px;"></td> 
+    <td>bio</td>
+    <td>major responsibilities</td>
+    <td>no. of commits</td>
+    <td>no. of issues</td>
+    <td>no. of unit tests</td>
+  </tr>
+  <tr>
+    <td>Wei-Chieh Chen</td>
+    <td>photo</td> 
+    <td>bio</td>
+    <td>major responsibilities</td>
+    <td>no. of commits</td>
+    <td>no. of issues</td>
+    <td>no. of unit tests</td>
+  </tr>
+  <tr>
+    <td>Xiangyi Kong</td>
+    <td>photo</td> 
+    <td>bio</td>
+    <td>major responsibilities</td>
+    <td>no. of commits</td>
+    <td>no. of issues</td>
+    <td>no. of unit tests</td>
+  </tr>
+  <tr>
+    <td>Nicholas Pereira</td>
+    <td>photo</td> 
+    <td>bio</td>
+    <td>major responsibilities</td>
+    <td>no. of commits</td>
+    <td>no. of issues</td>
+    <td>no. of unit tests</td>
+  </tr>
+  <tr>
+    <td>Xingrong Wu</td>
+    <td>photo</td> 
+    <td>bio</td>
+    <td>major responsibilities</td>
+    <td>no. of commits</td>
+    <td>no. of issues</td>
+    <td>no. of unit tests</td>
+  </tr>
+</table>
+</p>
+
+<p>
+Stats:<br>
+Total no. of commits<br>
+Total no. of issues<br>
+Total no. of unit tests<br>
+<a href="http://docs.marvel.apiary.io/#">Apiary API</a><br>
+<a href="https://github.com/PresidentNick/marvel/issues">GitHub Issue Tracker</a><br>
+<a href="https://github.com/PresidentNick/marvel">GitHub Repo</a><br>
+<a href="https://github.com/PresidentNick/marvel/wiki">GitHub Wiki</a><br>
+</p>
+
+<p>
+Data source:<br>
+<a href="http://developer.marvel.com/">Marvel Developer Portal</a><br>
+Description of how each was scraped<br>
+</p>
+{% endblock %}
