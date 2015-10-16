@@ -6,6 +6,10 @@ from app.marvel_api import get_list_of_characters, get_single_character
 def hello_world():
     return render_template('index.html', title='Marvel Database Home', team='swe team')
 
+@app.route('/splash')
+def splash():
+    return render_template('splash.html', title='Welcome to marvel', team='swe team')
+
 @app.route('/characters')
 def characters():
 	character_list = get_list_of_characters()
