@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template
-from app.marvel_api import get_list_of_characters
+from app.marvel_api import get_list_of_characters, get_single_character
 
 @app.route('/')
 def hello_world():
@@ -12,5 +12,6 @@ def characters():
 	return render_template('character_list.html', title='Marvel List of characters', character_list=character_list['data']['results'])
 
 @app.route('/characters/<character_id>')
-def single_character():
-	return render_template('character.html', title='Characters')
+def single_character(character_id):
+	character = get_single_character(character_id)
+	return render_template('character.html', title='Character', character=character)
