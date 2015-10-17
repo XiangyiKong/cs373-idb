@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-image: url_for('static', filename='img/Marvel-on-the-splash.jpg');
+  background-image: url('../img/Marvel-on-the-splash.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
