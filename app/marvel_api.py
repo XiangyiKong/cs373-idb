@@ -26,3 +26,14 @@ def get_single_character(character_id):
 	query_string = app.config['BASE_URL'] + 'characters/' + str(character_id) + create_api_params()
 	r = requests.get(query_string)
 	return r.json()
+
+def get_list_of_comics(title=None, issueNumber=None, limit=None, offset=None):
+	query_string = app.config['BASE_URL'] + 'comics' + create_api_params()
+	if title is not None:
+		query_string += '&title=' + title
+	if issueNumber is not None:
+		query_string += '&issueNumber=' + str(issueNumber)
+	if limit is not None:
+		query_string += '&limit=' + str(limit)
+	r = requests.get(query_string)
+	return r.json()
