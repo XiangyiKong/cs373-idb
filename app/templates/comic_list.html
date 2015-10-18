@@ -2,6 +2,6 @@
 
 {% block content %}
 	{% for comic in comic_list %}
-		<p>{{comic.title}}, id: {{comic.id}}</p>
+		<p><a href="/comics/{{comic.id}}">{{comic.title}}</a></p>
 	{% endfor %}
 {% endblock %}
