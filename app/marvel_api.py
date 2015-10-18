@@ -37,3 +37,8 @@ def get_list_of_comics(title=None, issueNumber=None, limit=None, offset=None):
 		query_string += '&limit=' + str(limit)
 	r = requests.get(query_string)
 	return r.json()
+
+def get_single_comic(comic_id):
+	query_string = app.config['BASE_URL'] + 'comics/' + str(comic_id) + create_api_params()
+	r = requests.get(query_string)
+	return r.json()
