@@ -3,7 +3,7 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-	{% for comic in comic_list %}
-		<p><a href="/comics/{{comic.id}}">{{comic.title}}</a></p>
+	{% for creator in creator_list %}
+		<p><a href="/creators/{{creator.id}}">{{creator.fullName}}</a></p>
 	{% endfor %}
 {% endblock %}

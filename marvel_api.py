@@ -42,3 +42,17 @@ def get_single_comic(comic_id):
 	query_string = app.config['BASE_URL'] + 'comics/' + str(comic_id) + create_api_params()
 	r = requests.get(query_string)
 	return r.json()
+
+def get_list_of_creators(name=None, nameStartsWith=None, limit=None, offset=None):
+	query_string = app.config['BASE_URL'] + 'creators' + create_api_params()
+	if name is not None:
+		query_string += '&name=' + name
+	if limit is not None:
+		query_string += '&limit=' + str(limit)
+	r = requests.get(query_string)
+	return r.json()
+
+def get_single_creator(creator_id):
+	query_string = app.config['BASE_URL'] + 'creators/' + str(creator_id) + create_api_params()
+	r = requests.get(query_string)
+	return r.json()

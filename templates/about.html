@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}{{title}}{% endblock %}
+
 {% block content %}
 <p>
 We are BitsPlease!!<br>
@@ -8,10 +10,19 @@ This team consisted of:<br>
 <p>
 <table border="1" style="width:100%">
   <tr>
+    <td>Nicholas Pereira</td>
+    <td><img src="{{ url_for('static', filename='img/Nicholas_Pereira.jpeg') }}" alt="Nicholas Pereira" style="width:200px;height:200px;"></td> 
+    <td>bio</td>
+    <td>TEAM LEADERRRR!!</td>
+    <td>no. of commits</td>
+    <td>no. of issues</td>
+    <td>no. of unit tests</td>
+  </tr>
+  <tr>
     <td>Erick Cardenas</td>
     <td><img src="{{ url_for('static', filename='img/Erick_Cardenas.jpg') }}" alt="Erick Cardenas" style="width:200px;height:200px;"></td> 
     <td>bio</td>
-    <td>major responsibilities</td>
+    <td>Models and the api to access those models</td>
     <td>no. of commits</td>
     <td>no. of issues</td>
     <td>no. of unit tests</td>
@@ -20,7 +31,7 @@ This team consisted of:<br>
     <td>Wei-Chieh Chen</td>
     <td>photo</td> 
     <td>bio</td>
-    <td>major responsibilities</td>
+    <td>About page, the page you are staring right now</td>
     <td>no. of commits</td>
     <td>no. of issues</td>
     <td>no. of unit tests</td>
@@ -29,16 +40,7 @@ This team consisted of:<br>
     <td>Xiangyi Kong</td>
     <td>photo</td> 
     <td>bio</td>
-    <td>major responsibilities</td>
-    <td>no. of commits</td>
-    <td>no. of issues</td>
-    <td>no. of unit tests</td>
-  </tr>
-  <tr>
-    <td>Nicholas Pereira</td>
-    <td><img src="{{ url_for('static', filename='img/Nicholas_Pereira.jpeg') }}" alt="Nicholas Pereira" style="width:200px;height:200px;"></td> 
-    <td>bio</td>
-    <td>major responsibilities</td>
+    <td>Character page</td>
     <td>no. of commits</td>
     <td>no. of issues</td>
     <td>no. of unit tests</td>
@@ -47,7 +49,7 @@ This team consisted of:<br>
     <td>Xingrong Wu</td>
     <td>photo</td> 
     <td>bio</td>
-    <td>major responsibilities</td>
+    <td>Splash page</td>
     <td>no. of commits</td>
     <td>no. of issues</td>
     <td>no. of unit tests</td>
