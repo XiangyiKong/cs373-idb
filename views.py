@@ -18,7 +18,7 @@ def characters():
 @app.route('/characters/<character_id>')
 def single_character(character_id):
 	character = get_single_character(character_id)
-	return render_template('character.html', title=character['data']['results'][0]['fullName'], character=character) #TODO: get title of page from character object/call
+	return render_template('character.html', title=character['data']['results'][0]['name'], character=character) #TODO: get title of page from character object/call
 
 @app.route('/comics')
 def comics():
@@ -28,7 +28,7 @@ def comics():
 @app.route('/comics/<comic_id>')
 def single_comic(comic_id):
 	comic = get_single_comic(comic_id)
-	return render_template('comic.html', title=comic['data']['results'][0]['fullName'], comic=comic) #TODO: get title of page from comic object/call
+	return render_template('comic.html', title=comic['data']['results'][0]['title'], comic=comic) #TODO: get title of page from comic object/call
 
 @app.route('/creators')
 def creators():
