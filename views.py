@@ -3,16 +3,12 @@ from flask import render_template
 from marvel_api import get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic
 
 @app.route('/')
-def hello_world():
-    return render_template('index.html', title='Marvel Database Home', team='swe team')
+def splash():
+    return render_template('splash.html', title='Welcome to Marvel', team='swe team')
 
 @app.route('/about')
 def about():
 	return render_template('about.html')
-
-@app.route('/splash')
-def splash():
-    return render_template('splash.html', title='Welcome to marvel', team='swe team')
 
 @app.route('/characters')
 def characters():
