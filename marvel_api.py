@@ -1,5 +1,5 @@
 import hashlib, requests
-from app.local import PRIVATE_KEY
+from local import PRIVATE_KEY
 from time import time
 from flask import current_app as app
 

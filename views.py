@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template
-from app.marvel_api import get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic
+from marvel_api import get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic
 
 @app.route('/')
 def hello_world():
