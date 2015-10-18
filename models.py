@@ -35,3 +35,12 @@ class Comics(db.Model):
     stories = db.Column()
     events = db.Column()
 
+class Creators(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    fullName = db.Column(db.String)
+    resourceURI = db.Column(db.String)
+    thumbnail = db.Column(db.Image)
+    series = db.Column()
+    stories = db.Column()
+    comics = db.Column()
+    events = db.Column()
