@@ -2,8 +2,26 @@
 
 {% block title %}{{title}}{% endblock %}
 
-{% block content %}
-	{% for character in character_list %}
-		<p><a href="/characters/{{character.id}}">{{character.name}}</a></p>
-	{% endfor %}
+{% block content %}    
+    <h1 class="h1">Marvel Characters</h1>
+		<!-- Table -->
+    <div class="box-table">
+        <table class="sortable">
+            <thead>
+                <tr>
+                	<th>PHOTO</th>
+                    <th>NAME</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+                {% for character in character_list %}
+                    <tr>
+                        <td class="user-photo"><img class="user-tumb" style="width:50px;height:50px;overflow:hidden" src={{character.thumbnail.path}}/portrait_small.{{character.thumbnail.extension}} alt=""></td>
+                        <td><a href="/characters/{{ character.id }}">{{ character.name }}</a></td>                     
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock %}

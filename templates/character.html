@@ -4,23 +4,31 @@
 
 {% block content %}
 Characters
-<div class="box-table">
-    <table class="sortable">
-        <thead>
-            <tr>
-            	<th>Photos</th>
-                <th>Name</th>
-                <th>URls</th>
-                <th>Comics</th>
-            </tr>
-            </thead>
-            <tbody>
-                {% for attributes in character %}
-                    <tr>
-                        <td>{{ attribute }}</a></td>
-                    </tr>
-                {% endfor %}
-       		</tbody>
-    </table>
-</div>
+<title> Marvel Characters </title>
+<!-- Portfolio Item Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">{{ character.data.results.0.name }}</h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Portfolio Item Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-responsive" style="width:350px;height:500px;overflow:hidden" src={{character.data.results.0.thumbnail.path}}/portrait_incredible.{{character.data.results.0.thumbnail.extension}} alt="">
+            </div>
+
+            <div class="col-md-4">
+                <h3>About</h3>
+                <p>Number of stories available: {{ character.data.results.0.stories.available}}</p>
+                <p>Number of events available: {{ character.data.results.0.events.available }}</p>
+                <p>Number of series available: {{ character.data.results.0.series.available }}</p>
+                <p>Number of comics available: {{ character.data.results.0.comics.available}}</p>
+                <p>Comics: <a href="/comics/{{character.data.results.0.comics}}" class="link">{{ character.data.results.0.comics.collectionURI}}</a></p> 
+                <p>Experimental Line: {{ character.data.results.0.comics}} </p>
+                <p>{% if character.data.results.0.description == "" %}This character does not have a description {% else %}{{character.data.results.0.description}} {% endif %}</p>
+            </div>
+
+        </div>
 {% endblock %}
