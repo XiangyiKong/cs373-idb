@@ -17,7 +17,7 @@
             </thead>
             <tbody>
                 {% for character in character_list %}
-                    <tr>
+                    <tr class="clickablerow">
                         <td class="user-photo"><img class="user-tumb" style="width:65px;height:45px;overflow:hidden" src={{character.thumbnail.path}}/standard_small.{{character.thumbnail.extension}} alt=""></td>
                         <td><a href="/characters/{{ character.id }}">{{ character.name }}</a></td>                     
                     </tr>
@@ -28,7 +28,7 @@
     <!-- JS -->
     <script src="{{ url_for('static', filename='javascripts/sortable.js')}}" type="text/javascript"></script>
     <script type="text/javascript">
-        $("td").click(function() {
+        $(".clickablerow").click(function() {
           window.location.href = $(this).find("a").attr("href");
         });
     </script>
