@@ -18,7 +18,7 @@
             <tbody>
                 {% for character in character_list %}
                     <tr>
-                        <td class="user-photo"><img class="user-tumb" style="width:50px;height:50px;overflow:hidden" src={{character.thumbnail.path}}/portrait_incredible.{{character.thumbnail.extension}} alt=""></td>
+                        <td class="user-photo"><img class="user-tumb" style="width:65px;height:45px;overflow:hidden" src={{character.thumbnail.path}}/standard_small.{{character.thumbnail.extension}} alt=""></td>
                         <td><a href="/characters/{{ character.id }}">{{ character.name }}</a></td>                     
                     </tr>
                 {% endfor %}
