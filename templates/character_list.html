@@ -10,7 +10,7 @@
         <table class="sortable">
             <thead>
                 <tr>
-                	<th>PHOTO</th>
+                	<th class="sorttable_nosort">PHOTO</th>
                     <th>NAME</th>
                    
                 </tr>
@@ -28,7 +28,7 @@
     <!-- JS -->
     <script src="{{ url_for('static', filename='javascripts/sortable.js')}}" type="text/javascript"></script>
     <script type="text/javascript">
-        $("tr").click(function() {
+        $("td").click(function() {
           window.location.href = $(this).find("a").attr("href");
         });
     </script>
