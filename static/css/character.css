@@ -1,0 +1,26 @@
+.title-section {
+  background-color:#000;
+  background-position:left top;
+  background-repeat:no-repeat;
+  position:relative;
+  text-align:center;
+  text-shadow: 1px 1px 1px #000000;
+  color:#fff;
+  padding-top:15%;
+  padding-bottom:425px;
+  padding-right:30%;
+  margin-bottom:30px;
+}
+
+/* 
+ * For mobile view:
+ */
+@media (max-width: 480px) {
+  .title-section {
+    background-position:top;
+    background-size: auto 150%;
+    padding-top:20%;
+    padding-bottom:425px;
+    padding-right:0px;
+  }
+}

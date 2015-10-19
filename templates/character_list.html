@@ -1,10 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}{{title}}{% endblock %}
+{% block title %}Marvel Characters{% endblock %}
 
-{% block content %}    
-    <h1 class="h1">Marvel Characters</h1>
-		<!-- Table -->
+{% block content %}   
+<link href="{{ url_for('static', filename='css/table.css')}}" rel="stylesheet" type="text/css"/> 
+    <p>Marvel Characters</p>
+	<!-- Table -->
     <div class="box-table">
         <table class="sortable">
             <thead>
@@ -17,11 +18,13 @@
             <tbody>
                 {% for character in character_list %}
                     <tr>
-                        <td class="user-photo"><img class="user-tumb" style="width:50px;height:50px;overflow:hidden" src={{character.thumbnail.path}}/portrait_small.{{character.thumbnail.extension}} alt=""></td>
+                        <td class="user-photo"><img class="user-tumb" style="width:50px;height:50px;overflow:hidden" src={{character.thumbnail.path}}/portrait_incredible.{{character.thumbnail.extension}} alt=""></td>
                         <td><a href="/characters/{{ character.id }}">{{ character.name }}</a></td>                     
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
+    <!-- JS -->
+    <script src="{{ url_for('static', filename='javascripts/sortable.js')}}" type="text/javascript"></script>
 {% endblock %}
