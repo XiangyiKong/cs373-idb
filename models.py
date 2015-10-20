@@ -4,70 +4,96 @@ from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
 
+#################
+# relationships #
+#################
+
+# many-to-many between characters and comics
 characters_comics_association = Table('characters_comics', Base.metadata,
     Column('characters_id', Integer, ForeignKey('characters.id')),
     Column('comics_id', Integer, ForeignKey('comics.id'))
 )
 
+# many-to-many between characters and stories
 characters_stories_association = Table('characters_stories', Base.metadata,
     Column('characters_id', Integer, ForeignKey('characters.id')),
     Column('stories_id', Integer, ForeignKey('stories.id'))
 )
 
+# many-to-many between characters and events
 characters_events_association = Table('characters_events', Base.metadata,
     Column('characters_id', Integer, ForeignKey('characters.id')),
     Column('events_id', Integer, ForeignKey('events.id'))
 )
 
+# many-to-many between characters and series
 characters_series_association = Table('characters_series', Base.metadata,
     Column('characters_id', Integer, ForeignKey('characters.id')),
     Column('series_id', Integer, ForeignKey('series.id'))
 )
 
+# many-to-many between comics and creators
 comics_creators_association = Table('comics_creators', Base.metadata,
     Column('comics_id', Integer, ForeignKey('comics.id')),
     Column('creators_id', Integer, ForeignKey('creators.id'))
 )
 
+# many-to-many between comics and stories
 comics_stories_association = Table('comics_stories', Base.metadata,
     Column('comics_id', Integer, ForeignKey('comics.id')),
     Column('stories_id', Integer, ForeignKey('stories.id'))
 )
 
+# many-to-many between comics and events
 comics_events_association = Table('comics_events', Base.metadata,
     Column('comics_id', Integer, ForeignKey('comics.id')),
     Column('events_id', Integer, ForeignKey('events.id'))
 )
 
+# many-to-many between creators and series
 creators_series_association = Table('creators_series', Base.metadata,
     Column('creators_id', Integer, ForeignKey('creators.id')),
     Column('series_id', Integer, ForeignKey('series.id'))
 )
 
+# many-to-many between creators and stories
 creators_stories_association = Table('creators_stories', Base.metadata,
     Column('creators_id', Integer, ForeignKey('creators.id')),
     Column('stories_id', Integer, ForeignKey('stories.id'))
 )
 
+# many-to-many between creators and events
 creators_events_association = Table('creators_events', Base.metadata,
     Column('creators_id', Integer, ForeignKey('creators.id')),
     Column('events_id', Integer, ForeignKey('events.id'))
 )
 
+# many-to-many between events and series
 events_series_association = Table('events_series', Base.metadata,
     Column('events_id', Integer, ForeignKey('events.id')),
     Column('series_id', Integer, ForeignKey('series.id'))
 )
 
+# many-to-many between events and creators
 events_creators_association = Table('events_creators', Base.metadata,
     Column('events_id', Integer, ForeignKey('events.id')),
     Column('creators_id', Integer, ForeignKey('creators.id'))
 )
 
+# many-to-many between seriess and stories
 series_stories_association = Table('series_stories', Base.metadata,
     Column('series_id', Integer, ForeignKey('series.id')),
     Column('stories_id', Integer, ForeignKey('stories.id'))
 )
+
+
+##########
+# models #
+##########
+
+####################
+# characters model #
+####################
 
 class Characters(Base):
     __tablename__ = 'characters'
@@ -93,6 +119,10 @@ class Characters(Base):
                 secondary = characters_series_association,
                 backref = "characters")
 
+################
+# comics model #
+################
+
 class Comics(Base):
     __tablename__ = 'comics'
     id = Column(Integer, primary_key=True)
@@ -102,7 +132,7 @@ class Comics(Base):
     format = Column(String)
     pageCount = Column(Integer)
     url = Column(String)
-    series = Column(Integer, ForeignKey('series.id'))
+    series = Column(Integer, ForeignKey('series.id')) # one-to-many
     thumbnail = Column(Image)
     images = relationship("Images")
     creators = relationship("Creators",
@@ -115,11 +145,16 @@ class Comics(Base):
                 secondary = comics_events_association,
                 backref = "comics")
 
+# table for images in a comic
 class Images(Base):
     __tablename__ = 'images'
     id = Column(Integer, primary_key=True)
     comics_id = Column(Integer, ForeignKey('comics.id'))
     path = Column(String)
+
+##################
+# creators model #
+##################
 
 class Creators(Base):
     __tablename__ = 'creators'
@@ -136,6 +171,10 @@ class Creators(Base):
     events = relationship("Events",
                 secondary = creators_events_association,
                 backref = "creators")
+
+################
+# events model #
+################
 
 class Events(Base):
     __tablename__ = 'events'
@@ -156,6 +195,10 @@ class Events(Base):
     next = Column(String)
     previous = Column(String)
 
+################
+# series model #
+################
+
 class Series(Base):
     __tablename__ = 'series'
     id = Column(Integer, primary_key=True)
@@ -172,6 +215,10 @@ class Series(Base):
                 backref = "series")
     next = Column(String)
     previous = Column(String)
+
+#################
+# stories model #
+#################
 
 class Stories(Base):
     __tablename__ = 'stories'
