@@ -1,92 +1,183 @@
-from flask import Flask
-from flask.ext.sqlalchemy import SQLAlchemy
+from sqlalchemy import Table, Column, Integer, ForeignKey
+from sqlalchemy.orm import relationship, backref
+from sqlalchemy.ext.declarative import declarative_base
 
-app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////tmp/test.db'
-db = SQLAlchemy(app)
+Base = declarative_base()
 
-class Characters(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String)
-    description = db.Column(db.String)
-    thumbnail = db.Column(db.Image)
-    url = db.Column(db.String)
-    comics = db.Column()
-    stories = db.Column()
-    events = db.Column()
-    series = db.Column()
+characters_comics_association = Table('characters_comics', Base.metadata,
+    Column('characters_id', Integer, ForeignKey('characters.id')),
+    Column('comics_id', Integer, ForeignKey('comics.id'))
+)
 
-    tags = db.relationship('Tag', secondary=tags,
-        backref=db.backref('pages', lazy='dynamic'))
+characters_stories_association = Table('characters_stories', Base.metadata,
+    Column('characters_id', Integer, ForeignKey('characters.id')),
+    Column('stories_id', Integer, ForeignKey('stories.id'))
+)
 
-class Comics(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-    issuenumber = db.Column(db.Integer)
-    description = db.Column(db.String)
-    format = db.Column(db.String)
-    pageCount = db.Column(db.Integer)
-    url = db.Column(db.String)
-    series = db.Column() ################
-    thumbnail = db.Column(db.Image)
-    images = db.Column() ################
-    creators = db.Column()
-    characters = db.Column()
-    stories = db.Column()
-    events = db.Column()
+characters_events_association = Table('characters_events', Base.metadata,
+    Column('characters_id', Integer, ForeignKey('characters.id')),
+    Column('events_id', Integer, ForeignKey('events.id'))
+)
 
-class Creators(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    fullName = db.Column(db.String)
-    url = db.Column(db.String)
-    thumbnail = db.Column(db.Image)
-    series = db.Column()
-    stories = db.Column()
-    comics = db.Column()
-    events = db.Column()
+characters_series_association = Table('characters_series', Base.metadata,
+    Column('characters_id', Integer, ForeignKey('characters.id')),
+    Column('series_id', Integer, ForeignKey('series.id'))
+)
 
-class Events(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-    description = db.Column(db.String)
-    url = db.Column(db.String)
-    start = db.Column(db.Date)
-    end = db.Column(db.Date)
-    thumbnail = db.Column(db.Image)
-    comics = db.Column()
-    stories = db.Column()
-    series = db.Column()
-    characters = db.Column()
-    creators = db.Column()
-    next = db.Column(db.String)
-    previous = db.Column(db.String)
+comics_creators_association = Table('comics_creators', Base.metadata,
+    Column('comics_id', Integer, ForeignKey('comics.id')),
+    Column('creators_id', Integer, ForeignKey('creators.id'))
+)
 
-class Series(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-    description = db.Column(db.String)
-    url = db.Column(db.String)
-    startYear = db.Column(db.Integer)
-    endYear = db.Column(db.Integer)
-    rating = db.Column(db.String)
-    thumbnail = db.Column(db.Image)
-    comics = db.Column()
-    stories = db.Column()
-    events = db.Column()
-    characters = db.Column()
-    creators = db.Column()
-    next = db.Column(db.String)
-    previous = db.Column(db.String)
+comics_stories_association = Table('comics_stories', Base.metadata,
+    Column('comics_id', Integer, ForeignKey('comics.id')),
+    Column('stories_id', Integer, ForeignKey('stories.id'))
+)
 
-class Stories(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    title = db.Column(db.String)
-    description = db.Column(db.String)
-    storyType = db.Column(db.String)
-    thumbnail = db.Column(db.Image)
-    comics = db.Column()
-    series = db.Column()
-    events = db.Column()
-    characters = db.Column()
-    creators = db.Column()
-    originalIssue = db.Column(db.String)
+comics_events_association = Table('comics_events', Base.metadata,
+    Column('comics_id', Integer, ForeignKey('comics.id')),
+    Column('events_id', Integer, ForeignKey('events.id'))
+)
+
+creators_series_association = Table('creators_series', Base.metadata,
+    Column('creators_id', Integer, ForeignKey('creators.id')),
+    Column('series_id', Integer, ForeignKey('series.id'))
+)
+
+creators_stories_association = Table('creators_stories', Base.metadata,
+    Column('creators_id', Integer, ForeignKey('creators.id')),
+    Column('stories_id', Integer, ForeignKey('stories.id'))
+)
+
+creators_events_association = Table('creators_events', Base.metadata,
+    Column('creators_id', Integer, ForeignKey('creators.id')),
+    Column('events_id', Integer, ForeignKey('events.id'))
+)
+
+events_series_association = Table('events_series', Base.metadata,
+    Column('events_id', Integer, ForeignKey('events.id')),
+    Column('series_id', Integer, ForeignKey('series.id'))
+)
+
+events_creators_association = Table('events_creators', Base.metadata,
+    Column('events_id', Integer, ForeignKey('events.id')),
+    Column('creators_id', Integer, ForeignKey('creators.id'))
+)
+
+series_stories_association = Table('series_stories', Base.metadata,
+    Column('series_id', Integer, ForeignKey('series.id')),
+    Column('stories_id', Integer, ForeignKey('stories.id'))
+)
+
+class Characters(Base):
+    __tablename__ = 'characters'
+    id = Column(Integer, primary_key=True)
+    name = Column(String)
+    description = Column(String)
+    thumbnail = Column(Image)
+    url = Column(String)
+
+    comics = relationship("Comics",
+                secondary = characters_comics_association,
+                backref = "characters")
+
+    stories = relationship("Stories",
+                secondary = characters_stories_association,
+                backref = "characters")
+
+    events = relationship("Events",
+                secondary = characters_events_association,
+                backref = "characters")
+
+    series = relationship("Series",
+                secondary = characters_series_association,
+                backref = "characters")
+
+class Comics(Base):
+    __tablename__ = 'comics'
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    issuenumber = Column(Integer)
+    description = Column(String)
+    format = Column(String)
+    pageCount = Column(Integer)
+    url = Column(String)
+    series = Column(Integer, ForeignKey('series.id'))
+    thumbnail = Column(Image)
+    images = relationship("Images")
+    creators = relationship("Creators",
+                secondary = comics_creators_association,
+                backref = "comics")
+    stories = relationship("Stories",
+                secondary = comics_stories_association,
+                backref = "comics")
+    events = relationship("Events",
+                secondary = comics_events_association,
+                backref = "comics")
+
+class Images(Base):
+    __tablename__ = 'images'
+    id = Column(Integer, primary_key=True)
+    comics_id = Column(Integer, ForeignKey('comics.id'))
+    path = Column(String)
+
+class Creators(Base):
+    __tablename__ = 'creators'
+    id = Column(Integer, primary_key=True)
+    fullName = Column(String)
+    url = Column(String)
+    thumbnail = Column(Image)
+    series = relationship("Series",
+                secondary = creators_series_association,
+                backref = "creators")
+    stories = relationship("Stories",
+                secondary = creators_stories_association,
+                backref = "creators")
+    events = relationship("Events",
+                secondary = creators_events_association,
+                backref = "creators")
+
+class Events(Base):
+    __tablename__ = 'events'
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    description = Column(String)
+    url = Column(String)
+    start = Column(Date)
+    end = Column(Date)
+    thumbnail = Column(Image)
+    series = relationship("Series",
+                secondary = events_series_association,
+                backref = "events")
+
+    creators = relationship("Creators",
+                secondary = events_creators_association,
+                backref = "events")
+    next = Column(String)
+    previous = Column(String)
+
+class Series(Base):
+    __tablename__ = 'series'
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    description = Column(String)
+    url = Column(String)
+    startYear = Column(Integer)
+    endYear = Column(Integer)
+    rating = Column(String)
+    thumbnail = Column(Image)
+    comics = relationship("Comics", backref="series")
+    stories = relationship("Stories",
+                secondary = series_stories_association,
+                backref = "series")
+    next = Column(String)
+    previous = Column(String)
+
+class Stories(Base):
+    __tablename__ = 'stories'
+    id = Column(Integer, primary_key=True)
+    title = Column(String)
+    description = Column(String)
+    storyType = Column(String)
+    thumbnail = Column(Image)
+    originalIssue = Column(String)
