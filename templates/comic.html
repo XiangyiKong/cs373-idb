@@ -3,7 +3,25 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-Comic<br><br>
-{{comic}}<br><br>
-Barbara, please work on this template
+	<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+
+	<h1> {{ comic.data.results.0.name }} </h1>
+
+	<div class="row">
+        <div class="col1">
+            <img class="img-responsive" style="width:300px;height:300px;overflow:hidden" src={{comic.data.results.0.thumbnail.path}}/standard_fantastic.{{comic.data.results.0.thumbnail.extension}} alt="">
+        </div>
+
+        <div class="col2">
+        	<p>Number of creators available: {{ comic.data.results.0.creators.available }}</p>
+            <p>Number of characters available: {{ comic.data.results.0.characters.available }}</p>
+            <p>Number of stories available: {{ comic.data.results.0.stories.available }}</p>
+            <p>Number of events available: {{ comic.data.results.0.events.available }}</p>
+
+            <p>Issue number: {{ comic.data.results.0.issueNumber }}</p>
+            <p>Description: {{ comic.data.results.0.description }}</p>
+            <p>Format: {{ comic.data.results.0.format }}</p>
+            <p>Page count: {{ comic.data.results.0.pageCount }}</p>
+        </div>
+    </div>
 {% endblock %}
