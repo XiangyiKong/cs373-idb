@@ -19,11 +19,16 @@ def characters():
 @app.route('/characters/<character_id>')
 def single_character(character_id):
 	character = get_single_character(character_id)
-	comic_list = []
+	comic_name_list = []
 	for comic_url in character['data']['results'][0]['comics']['items']:
 		m = re.match(".+/(?P<comic_id>\d+)", comic_url['resourceURI'])
-		comic_list.append(m.group("comic_id"))
-	return render_template('character.html', title=character['data']['results'][0]['name'], character=character, comic_list=comic_list) #TODO: get title of page from character object/call
+		single_comic_name = get_single_comic(m.group("comic_id"))
+		comic_name_list.append(single_comic_name)
+
+	url_list = []
+	for character_url in character['data']['results'][0]['urls']:
+		url_list.append(character_url)
+	return render_template('character.html', title=character['data']['results'][0]['name'], character=character, comic_name_list=comic_name_list, url_list=url_list) #TODO: get title of page from character object/call
 
 @app.route('/comics')
 def comics():

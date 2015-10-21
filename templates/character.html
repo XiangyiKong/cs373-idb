@@ -3,14 +3,8 @@
 {% block title %}{{title}}{% endblock %}
 
 {% block content %}
-<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
- <!--    <div class="title-section" style="padding-bottom:300px;background-image:url('/static/img/Marvel-on-the-splash.jpg');">
-        <img style="padding-bottom:300px" src='/static/img/Marvel-on-the-splash.jpg' alt="">
-    <h1 style="color:#fff" class='got'>About</h1>
-    <p class="lead blog-description"><i></i></p>
-    </div> -->
-<!-- Portfolio Item Heading -->       
-        <!-- Portfolio Item Row -->
+<link href="{{ url_for('static', filename='css/style.css')}}" rel="stylesheet" type="text/css"/>
+
         <h1> {{ character.data.results.0.name }} </h1>
 
         <div class="row">
@@ -19,25 +13,39 @@
             </div>
 
             <div class="col2">
+                <p></p>
                 <p>Number of stories available: {{ character.data.results.0.stories.available}}</p>
                 <p>Number of events available: {{ character.data.results.0.events.available }}</p>
                 <p>Number of series available: {{ character.data.results.0.series.available }}</p>
                 <p>Number of comics available: {{ character.data.results.0.comics.available}}</p>
-                <p>Comics Link: <a href="/comics" class="link">{{ character.data.results.0.comics.collectionURI}}</a></p> 
+
                 <p>Character Appears in these comics:</p>
-                <li>
-                    {% for comic in comic_list %} 
-                    <ul>
-                        <a href="/comics/{{comic}}">Comic</a>
-                    </ul>
+                <ul>
+                    {% for comic in comic_name_list %} 
+                    <li>
+                        <a href="/comics/{{comic.data.results.0.id}}">{{comic.data.results.0.title}}</a>  
+                    </li>                
                     {% endfor %}
-                </li>
-                <p>Experimental Line: {{ character.data.results.0.series}} </p>
-                <p>Experimental Line: {{ character.data.results.0.events}} </p>
-                <p>Experimental Line: {{ character.data.results.0.stories}} </p>
+                </ul>
+
+                <p>External websites:</p>
+                <ul>
+                    {% for url in url_list %} 
+                    <li>
+                        <a href="{{url.url}}" class="link" target="_blank">{{url.url}}</a>
+                    </li>                
+                {% endfor %}
+                </ul>
+           <!-- 
+         
+                <p>Experimental Line Series: {{ character.data.results.0.series}} </p>
+                <p>Experimental Line Events: {{ character.data.results.0.events}} </p>
+                <p>Experimental Line Stories: {{ character.data.results.0.stories}} </p>  -->
+
 
                 <p>{% if character.data.results.0.description == "" %}This character does not have a description {% else %}{{character.data.results.0.description}} {% endif %}</p>
             </div>
 
         </div>
 {% endblock %}
+
