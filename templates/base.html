@@ -17,7 +17,10 @@
 
 	<link href="{{ url_for('static', filename='css/sticky-footer-navbar.css') }}" rel='stylesheet'>
 
+	<link href="{{ url_for('static', filename='css/table.css') }}" rel='stylesheet'>
+
 	<title>{% block title %}Marvel Database{% endblock %}</title>
+	{% block extra_css %}{% endblock%}
 </head>
 <body>
 	<nav class="navbar navbar-default">
