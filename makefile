@@ -10,22 +10,22 @@ FILES :=                              \
 
 check:
 	@not_found=0;                                 \
-    for i in $(FILES);                            \
-    do                                            \
-        if [ -e $$i ];                            \
-        then                                      \
-            echo "$$i found";                     \
-        else                                      \
-            echo "$$i NOT FOUND";                 \
-            not_found=`expr "$$not_found" + "1"`; \
-        fi                                        \
-    done;                                         \
-    if [ $$not_found -ne 0 ];                     \
-    then                                          \
-        echo "$$not_found failures";              \
-        exit 1;                                   \
-    fi;                                           \
-    echo "success";
+	for i in $(FILES);                            \
+	do                                            \
+		if [ -e $$i ];                            \
+		then                                      \
+			echo "$$i found";                     \
+		else                                      \
+			echo "$$i NOT FOUND";                 \
+			not_found=`expr "$$not_found" + "1"`; \
+		fi                                        \
+	done;                                         \
+	if [ $$not_found -ne 0 ];                     \
+	then                                          \
+		echo "$$not_found failures";              \
+		exit 1;                                   \
+	fi;                                           \
+	echo "success";
 
 clean:
 	rm -f  .coverage
@@ -48,4 +48,4 @@ IDB1.log:
 test.tmp: test.py
 	coverage3 run    --branch test.py >  test.tmp 2>&1
 	coverage3 report -m                      >> test.tmp
-	cat test.tmp
+	cat test.tmp	
