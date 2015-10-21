@@ -1,6 +1,7 @@
 from app import app
 from flask import render_template
 from marvel_api import get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic, get_list_of_creators, get_single_creator
+import re
 
 @app.route('/')
 def splash():
@@ -18,6 +19,13 @@ def characters():
 @app.route('/characters/<character_id>')
 def single_character(character_id):
 	character = get_single_character(character_id)
+	comics_id = []
+	for comic_url in character['data']['results'][0]['comics']['items'][0]:
+		print('#################################################')
+		print(comic_url)
+		m = re.match(".+/(?P<comic_id>\d+)", comic_url['resourceURI'])
+		comics_id.append(m.group("comics_id"))
+	print(comics_id)
 	return render_template('character.html', title=character['data']['results'][0]['name'], character=character) #TODO: get title of page from character object/call
 
 @app.route('/comics')
