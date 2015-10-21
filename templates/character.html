@@ -24,7 +24,14 @@
                 <p>Number of series available: {{ character.data.results.0.series.available }}</p>
                 <p>Number of comics available: {{ character.data.results.0.comics.available}}</p>
                 <p>Comics Link: <a href="/comics" class="link">{{ character.data.results.0.comics.collectionURI}}</a></p> 
-                <p>Experimental Line: {{ character.data.results.0.comics}} </p>
+                <p>Character Appears in these comics:</p>
+                <li>
+                    {% for comic in comic_list %} 
+                    <ul>
+                        <a href="/comics/{{comic}}">Comic</a>
+                    </ul>
+                    {% endfor %}
+                </li>
                 <p>Experimental Line: {{ character.data.results.0.series}} </p>
                 <p>Experimental Line: {{ character.data.results.0.events}} </p>
                 <p>Experimental Line: {{ character.data.results.0.stories}} </p>
