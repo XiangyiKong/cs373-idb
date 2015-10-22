@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, jsonify, request
 from marvel_api import (get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic, get_list_of_events,
-	get_single_event, get_list_of_series, get_single_series)
+	get_single_event, get_list_of_series, get_single_series, get_single_creator, get_list_of_creators)
 import re
 
 @app.route('/')
