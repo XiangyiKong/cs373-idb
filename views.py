@@ -54,6 +54,26 @@ def single_creator(creator_id):
 def page_not_found(e):
     return render_template('404.html'), 404
 
-@app.route('/api/characters')
+@app.route('/api/characters', methods=['GET'])
 def characters_api():
 	return jsonify(get_list_of_characters())
+
+@app.route('/api/characters/<character_id>', methods=['GET'])
+def single_character_api(character_id):
+	return jsonify(get_single_character(character_id))
+
+@app.route('/api/comics', methods=['GET'])
+def comics_api():
+	return jsonify(get_list_of_comics())
+
+@app.route('/api/comics/<comic_id>', methods=['GET'])
+def single_comic_api(comic_id):
+	return jsonify(get_single_comic(comic_id))
+
+@app.route('/api/creators', methods=['GET'])
+def creators_api():
+	return jsonify(get_list_of_creators())
+
+@app.route('/api/creators/<creator_id>', methods=['GET'])
+def single_creator_api(creator_id):
+	return jsonify(get_single_creator(creator_id))
