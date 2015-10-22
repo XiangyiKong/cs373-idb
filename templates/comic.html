@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock%}
+
+{% block content %}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+
+    <h1> {{ comic.data.results.0.name }} </h1>
+
+    <div class="picture">
+        <img class="img-responsive" align="middle" style="width:250px;height:250px;overflow:hidden" src={{comic.data.results.0.thumbnail.path}}/standard_fantastic.{{comic.data.results.0.thumbnail.extension}} alt="">
+    </div>
+
+    <div class="table1">
+        <p></p>
+        <h5>Number of creators available:</h5> 
+        <p>{{ comic.data.results.0.creators.available }}</p>
+        <h5>Number of charactors available:</h5>
+        <p>{{ comic.data.results.0.characters.available }}</p>
+        <h5>Number of stories available:</h5>
+        <p>{{ comic.data.results.0.stories.available }}</p>
+        <h5>Number of events available:</h5>
+        <p>{{ comic.data.results.0.events.available }}</p>
+    </div>
+
+    <div class="table2">
+        <p></p>
+        <h5>Issue number:</h5>
+        <p>{{ comic.data.results.0.issueNumber }}</p>
+        <h5>Format:</h5>
+        <p>{{ comic.data.results.0.format }}</p>
+        <h5>Page count:</h5>
+        <p>{{ comic.data.results.0.pageCount }}</p>
+        <h5>Comic contains these characters:</h5>
+        <ul>
+            {% for character in character_name_list %} 
+            <li>
+                <a href="/characters/{{character.data.results.0.id}}">{{character.data.results.0.title}}</a>  
+            </li>   
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>             
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="dont-break-out">
+        <h5>External websites:</h5>
+        <ul>
+            {% for url in url_list %} 
+            <li>
+                <a href="{{url.url}}" class="link" target="_blank">{{url.url}}</a>
+            </li>
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>           
+        {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="table3">
+        <h5> Description: </h5>
+        <p>{% if comic.data.results.0.description == "" %}This comic does not have a description {% else %}{{comic.data.results.0.description}} {% endif %}</p>
+    </div>
+{% endblock %}

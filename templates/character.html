@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock%}
+
+{% block content %}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+
+        <h1> {{ character.data.results.0.name }} </h1>
+
+        <div class="picture">
+           
+                <img class="img-responsive" align="middle" style="width:250px;height:250px;overflow:hidden" src={{character.data.results.0.thumbnail.path}}/standard_fantastic.{{character.data.results.0.thumbnail.extension}} alt="">
+        </div>
+
+            <div class="table1">
+                <p></p>
+                <h5>Number of stories available:</h5> 
+                <p>{{ character.data.results.0.stories.available}}</p>
+                <h5>Number of events available:</h5>
+                <p>{{ character.data.results.0.events.available }}</p>
+                <h5>Number of series available: </h5>
+                <p>{{ character.data.results.0.series.available }}</p>
+            </div>
+
+            <div class="table2">
+
+                <h5>Character Appears in these comics:</h5>        
+                <ul>
+                    {% for comic in comic_name_list %} 
+                    <li>
+                        <a href="/comics/{{comic.data.results.0.id}}">{{comic.data.results.0.title}}</a>  
+                    </li> 
+                    {% else %}
+                        <em>Unbelievable.  No entries here so far</em>               
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+            <div class="dont-break-out">
+                    <h5>External websites:</h5>
+                    <ul>
+                        {% for url in url_list %} 
+                        <li>
+                            <a href="{{url.url}}" class="link" target="_blank">{{url.url}}</a>
+                        </li> 
+                        {% else %}
+                        <em>Unbelievable.  No entries here so far</em>                 
+                    {% endfor %}
+                    </ul>
+            </div>
+           <!-- 
+         
+                <p>Experimental Line Series: {{ character.data.results.0.series}} </p>
+                <p>Experimental Line Events: {{ character.data.results.0.events}} </p>
+                <p>Experimental Line Stories: {{ character.data.results.0.stories}} </p>  -->
+            <div class="table3">
+                <h5> Description: </h5>
+                <p>{% if character.data.results.0.description == "" %}This character does not have a description {% else %}{{character.data.results.0.description}} {% endif %}</p>
+            </div>
+
+{% endblock %}
+

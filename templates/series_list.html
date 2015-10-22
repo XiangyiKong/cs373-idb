@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock %}
+
+
+{% block content %}
+	<h1>Marvel Series</h1>
+    {% for serie in series_list %}
+        <p><a href="/series/{{ serie.id }}">{{ serie.title }}</a></p>
+    {% endfor %}
+{% endblock %}
