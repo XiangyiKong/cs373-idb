@@ -1,4 +1,4 @@
-from sqlalchemy import Table, Column, Integer, String, Image, ForeignKey
+from sqlalchemy import Table, Column, Integer, Date, String, ForeignKey
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -86,6 +86,12 @@ series_stories_association = Table('series_stories', Base.metadata,
     Column('stories_id', Integer, ForeignKey('stories.id'))
 )
 
+# table for images in a comic
+class Images(Base):
+    __tablename__ = 'images'
+    id = Column(Integer, primary_key=True)
+    comics_id = Column(Integer, ForeignKey('comics.id'))
+    path = Column(String)
 
 ##########
 # models #
@@ -109,7 +115,7 @@ class Characters(Base):
     id = Column(Integer, primary_key=True)
     name = Column(String)
     description = Column(String)
-    thumbnail = Column(Image)
+    thumbnail = Column(Integer, ForeignKey('images.id'))
     url = Column(String)
     comics = relationship("Comics",
                 secondary = characters_comics_association,
@@ -153,7 +159,7 @@ class Comics(Base):
     url = Column(String)
     # one-to-many series<->comics
     series = Column(Integer, ForeignKey('series.id')) 
-    thumbnail = Column(Image)
+    thumbnail = Column(Integer, ForeignKey('images.id'))
     images = relationship("Images")
     creators = relationship("Creators",
                 secondary = comics_creators_association,
@@ -164,13 +170,6 @@ class Comics(Base):
     events = relationship("Events",
                 secondary = comics_events_association,
                 backref = "comics")
-
-# table for images in a comic
-class Images(Base):
-    __tablename__ = 'images'
-    id = Column(Integer, primary_key=True)
-    comics_id = Column(Integer, ForeignKey('comics.id'))
-    path = Column(String)
 
 class Creators(Base):
     """ A model to people and entities that make Marvel comics
@@ -189,7 +188,7 @@ class Creators(Base):
     id = Column(Integer, primary_key=True)
     fullName = Column(String)
     url = Column(String)
-    thumbnail = Column(Image)
+    thumbnail = Column(Integer, ForeignKey('images.id'))
     series = relationship("Series",
                 secondary = creators_series_association,
                 backref = "creators")
@@ -226,7 +225,7 @@ class Events(Base):
     url = Column(String)
     start = Column(Date)
     end = Column(Date)
-    thumbnail = Column(Image)
+    thumbnail = Column(Integer, ForeignKey('images.id'))
     series = relationship("Series",
                 secondary = events_series_association,
                 backref = "events")
@@ -265,7 +264,7 @@ class Series(Base):
     startYear = Column(Integer)
     endYear = Column(Integer)
     rating = Column(String)
-    thumbnail = Column(Image)
+    thumbnail = Column(Integer, ForeignKey('images.id'))
     comics = relationship("Comics", backref="series")
     stories = relationship("Stories",
                 secondary = series_stories_association,
@@ -294,5 +293,5 @@ class Stories(Base):
     title = Column(String)
     description = Column(String)
     storyType = Column(String)
-    thumbnail = Column(Image)
+    thumbnail = Column(Integer, ForeignKey('images.id'))
     originalIssue = Column(String)
