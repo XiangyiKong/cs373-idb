@@ -38,7 +38,17 @@ def comics():
 @app.route('/comics/<comic_id>')
 def single_comic(comic_id):
 	comic = get_single_comic(comic_id)
-	return render_template('comic.html', title=comic['data']['results'][0]['title'], comic=comic) #TODO: get title of page from comic object/call
+	# character_name_list = []
+	# for character_url in comic['data']['results'][0]['characters']['items']:
+	# 	m = re.match(".+/(?P<character_id>\d+)", character_url['resourceURI'])
+	# 	single_character_name = get_single_character(m.group("character_id"))
+	# 	character_name_list.append(single_character_name)
+
+	url_list = []
+	for comic_url in comic['data']['results'][0]['urls']:
+		url_list.append(comic_url)
+	# return render_template('comic.html', title=comic['data']['results'][0]['title'], comic=comic, character_name_list=character_name_list, url_list=url_list)
+	return render_template('comic.html', title=comic['data']['results'][0]['title'], comic=comic, url_list=url_list) #TODO: get title of page from comic object/call
 
 @app.route('/creators')
 def creators():

@@ -2,26 +2,62 @@
 
 {% block title %}{{title}}{% endblock %}
 
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock%}
+
 {% block content %}
-	<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
 
-	<h1> {{ comic.data.results.0.name }} </h1>
+    <h1> {{ comic.data.results.0.name }} </h1>
 
-	<div class="row">
-        <div class="col1">
-            <img class="img-responsive" style="width:300px;height:300px;overflow:hidden" src={{comic.data.results.0.thumbnail.path}}/standard_fantastic.{{comic.data.results.0.thumbnail.extension}} alt="">
-        </div>
+    <div class="picture">
+        <img class="img-responsive" align="middle" style="width:250px;height:250px;overflow:hidden" src={{comic.data.results.0.thumbnail.path}}/standard_fantastic.{{comic.data.results.0.thumbnail.extension}} alt="">
+    </div>
 
-        <div class="col2">
-        	<p>Number of creators available: {{ comic.data.results.0.creators.available }}</p>
-            <p>Number of characters available: {{ comic.data.results.0.characters.available }}</p>
-            <p>Number of stories available: {{ comic.data.results.0.stories.available }}</p>
-            <p>Number of events available: {{ comic.data.results.0.events.available }}</p>
+    <div class="table1">
+        <p></p>
+        <h5>Number of creators available:</h5> 
+        <p>{{ comic.data.results.0.creators.available }}</p>
+        <h5>Number of charactors available:</h5>
+        <p>{{ comic.data.results.0.characters.available }}</p>
+        <h5>Number of stories available:</h5>
+        <p>{{ comic.data.results.0.stories.available }}</p>
+        <h5>Number of events available:</h5>
+        <p>{{ comic.data.results.0.events.available }}</p>
+    </div>
 
-            <p>Issue number: {{ comic.data.results.0.issueNumber }}</p>
-            <p>Description: {{ comic.data.results.0.description }}</p>
-            <p>Format: {{ comic.data.results.0.format }}</p>
-            <p>Page count: {{ comic.data.results.0.pageCount }}</p>
-        </div>
+    <div class="table2">
+        <p></p>
+        <h5>Issue number:</h5>
+        <p>{{ comic.data.results.0.issueNumber }}</p>
+        <h5>Format:</h5>
+        <p>{{ comic.data.results.0.format }}</p>
+        <h5>Page count:</h5>
+        <p>{{ comic.data.results.0.pageCount }}</p>
+        <!-- <h5>Character Appears in these comics:</h5>
+        <ul>
+            {% for character in character_name_list %} 
+            <li>
+                <a href="/characters/{{character.data.results.0.id}}">{{character.data.results.0.title}}</a>  
+            </li>                
+            {% endfor %}
+        </ul> -->
+    </div>
+
+    <div class="dont-break-out">
+        <h5>External websites:</h5>
+        <ul>
+            {% for url in url_list %} 
+            <li>
+                <a href="{{url.url}}" class="link" target="_blank">{{url.url}}</a>
+            </li>                
+        {% endfor %}
+        </ul>
+    </div>
+    
+    <div class="table3">
+        <h5> Description: </h5>
+        <p>{% if comic.data.results.0.description == "" %}This comic does not have a description {% else %}{{comic.data.results.0.description}} {% endif %}</p>
     </div>
 {% endblock %}
