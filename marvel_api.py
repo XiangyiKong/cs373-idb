@@ -67,3 +67,8 @@ def get_list_of_series(**kwargs):
 		query_string += '&' + str(k) + '=' + str(v[0])
 	r = requests.get(query_string)
 	return r.json()
+
+def get_single_series(series_id):
+	query_string = app.config['BASE_URL'] + 'series/' + str(series_id) + create_api_params()
+	r = requests.get(query_string)
+	return r.json()
