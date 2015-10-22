@@ -11,7 +11,7 @@ def splash():
 
 @app.route('/about')
 def about():
-	return render_template('about.html', title='BitsPlease. We are BitsPlease.', contributor_list=get_contributor_list)
+	return render_template('about.html', title='BitsPlease. We are BitsPlease.', contributor_list=get_contributor_list())
 
 @app.route('/characters')
 def characters():
