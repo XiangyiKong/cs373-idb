@@ -10,6 +10,11 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ url_for('static', filename='css/cover.css') }}" rel='stylesheet'>
+
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <!-- This is how the burger menu works! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   </head>
 
   <body>
@@ -18,38 +23,39 @@
         <div class="cover-container">
           <div class="masthead clearfix">
             <div class="inner">
-              
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-activates="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar" style="background-color:white"></span>
-                  <span class="icon-bar" style="background-color:white"></span>
-                  <span class="icon-bar" style="background-color:white"></span>
-                </button>
-                <a class="navbar-brand" href="/"><b>MARVEL</b></a>
-              </div>
-
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                  <li><a href="/characters">Characters</a></li>
-                  <li><a href="/comics">Comics</a></li>
-                  <li><a href="/creators">Creators</a></li>
-                  <li><a href="/events">Events</a></li>
-                  <li><a href="/series">Series</a></li>
-                  <li><a href="/story">Story</a></li>
-                  <li><a href="/about">About</a></li>
-                </ul>
-                
-                <ul class="nav navbar-nav navbar-right">
-                  <form class="navbar-form navbar-left" role="search">
-                  <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search">
+               <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/">Marvel</a>
                   </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-                </ul>
-              </div>
+
+                  <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                      <li><a href="/characters">Characters</a></li>
+                      <li><a href="/comics">Comics</a></li>
+                      <li><a href="/creators">Creators</a></li>
+                      <li><a href="/events">Events</a></li>
+                      <li><a href="/series">Series</a></li>
+                      <li><a href="/stories">Stories</a></li>
+                      <li><a href="/about">About</a></li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                      <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                          <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">Submit</button>
+                      </form>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
             </div>
           </div>
 
@@ -58,6 +64,7 @@
               <p class="text-muted">Data provided by Marvel. © 2015 MARVEL</p>
             </div>
           </div>
+          
         </div>
       </div>
     </div>
