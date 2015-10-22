@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, jsonify, request
 from marvel_api import (get_list_of_characters, get_single_character, get_list_of_comics, get_list_of_events,
-	get_single_event)
+	get_single_event, get_list_of_series)
 import re
 
 @app.route('/')
@@ -69,8 +69,14 @@ def events():
 @app.route('/events/<event_id>')
 def single_event(event_id):
 	event = get_single_event(event_id)
-	print(event)
 	return render_template('event.html', title=event['data']['results'][0]['title'], event=event)
+
+@app.route('/series')
+def series():
+	series_list = get_list_of_series(**request.args)
+	print("###########")
+	print(series_list)
+	return render_template('series_list.html', title='Marvel List of Series', series_list=series_list)
 
 @app.errorhandler(404)
 def page_not_found(e):
