@@ -119,16 +119,16 @@ class Characters(Base):
     thumbnail = Column(Integer, ForeignKey('images.id'))
     url = Column(String)
     comics = relationship("Comics",
-                secondary = characters_comics_association,
+                secondary =lambda: characters_comics_association,
                 backref = "characters")
     stories = relationship("Stories",
-                secondary = characters_stories_association,
+                secondary =lambda: characters_stories_association,
                 backref = "characters")
     events = relationship("Events",
-                secondary = characters_events_association,
+                secondary =lambda: characters_events_association,
                 backref = "characters")
     series = relationship("Series",
-                secondary = characters_series_association,
+                secondary =lambda: characters_series_association,
                 backref = "characters")
 
 class Comics(Base):
@@ -163,13 +163,13 @@ class Comics(Base):
     thumbnail = Column(Integer, ForeignKey('images.id'))
     images = relationship("Images")
     creators = relationship("Creators",
-                secondary = comics_creators_association,
+                secondary =lambda: comics_creators_association,
                 backref = "comics")
     stories = relationship("Stories",
-                secondary = comics_stories_association,
+                secondary =lambda: comics_stories_association,
                 backref = "comics")
     events = relationship("Events",
-                secondary = comics_events_association,
+                secondary =lambda: comics_events_association,
                 backref = "comics")
 
 class Creators(Base):
@@ -191,13 +191,13 @@ class Creators(Base):
     url = Column(String)
     thumbnail = Column(Integer, ForeignKey('images.id'))
     series = relationship("Series",
-                secondary = creators_series_association,
+                secondary =lambda: creators_series_association,
                 backref = "creators")
     stories = relationship("Stories",
-                secondary = creators_stories_association,
+                secondary =lambda: creators_stories_association,
                 backref = "creators")
     events = relationship("Events",
-                secondary = creators_events_association,
+                secondary =lambda: creators_events_association,
                 backref = "creators")
 
 class Events(Base):
@@ -228,10 +228,10 @@ class Events(Base):
     end = Column(Date)
     thumbnail = Column(Integer, ForeignKey('images.id'))
     series = relationship("Series",
-                secondary = events_series_association,
+                secondary =lambda: events_series_association,
                 backref = "events")
     creators = relationship("Creators",
-                secondary = events_creators_association,
+                secondary =lambda: events_creators_association,
                 backref = "events")
     next = Column(String)
     previous = Column(String)
@@ -268,7 +268,7 @@ class Series(Base):
     thumbnail = Column(Integer, ForeignKey('images.id'))
     comics = relationship("Comics", backref="series")
     stories = relationship("Stories",
-                secondary = series_stories_association,
+                secondary =lambda: series_stories_association,
                 backref = "series")
     next = Column(String)
     previous = Column(String)
