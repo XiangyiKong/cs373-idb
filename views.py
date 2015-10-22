@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, jsonify, request
 from marvel_api import (get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic, get_list_of_events,
-	get_single_event, get_list_of_series, get_single_series, get_single_creator, get_list_of_creators)
+	get_single_event, get_list_of_series, get_single_series, get_single_creator)
 import re
 
 @app.route('/')
@@ -68,8 +68,26 @@ def events():
 @app.route('/events/<event_id>')
 def single_event(event_id):
 	event = get_single_event(event_id)
-	print(event)
-	return render_template('event.html', title=event['data']['results'][0]['title'], event=event)
+	comic_name_list = []
+	for comic_url in event['data']['results'][0]['comics']['items']:
+		m = re.match(".+/(?P<comic_id>\d+)", comic_url['resourceURI'])
+		single_comic_name = get_single_comic(m.group("comic_id"))
+		comic_name_list.append(single_comic_name)
+
+	character_name_list = []
+	# for character_url in event['data']['results'][0]['characters']:
+	# 	m = re.match(".+/(?P<character_id>\d+)", character_url['resourceURI'])
+	# 	single_character_name = get_single_character(m.group("character_id"))
+	# 	print "#####################"
+	# 	print m.group("character_id")
+	# 	character_name_list.append(single_character_name)
+
+	creator_name_list=[]
+	for creator_url in event['data']['results'][0]['creators']['items']:
+		m = re.match(".+/(?P<creator_id>\d+)", creator_url['resourceURI'])
+		single_creator_name = get_single_creator(m.group("creator_id"))
+		creator_name_list.append(single_creator_name)
+	return render_template('event.html', title=event['data']['results'][0]['title'], event=event, comic_name_list=comic_name_list, character_name_list=character_name_list, creator_name_list=creator_name_list)
 
 @app.route('/series')
 def series():

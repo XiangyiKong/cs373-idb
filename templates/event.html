@@ -2,6 +2,79 @@
 
 {% block title %}{{title}}{% endblock %}
 
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock%}
+
 {% block content %}
-{{event}}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+
+        <h1> {{ event.data.results.0.name }} </h1>
+
+        <div class="picture">
+           
+                <img class="img-responsive" align="middle" style="width:250px;height:250px;overflow:hidden" src={{event.data.results.0.thumbnail.path}}/standard_fantastic.{{event.data.results.0.thumbnail.extension}} alt="">
+        </div>
+
+            <div class="table1">
+                <p></p>
+                <h5>Number of stories available:</h5> 
+                <p>{{ event.data.results.0.stories.available}}</p>
+                <h5>Number of series available: </h5>
+                <p>{{ event.data.results.0.series.available }}</p>
+                <h5>Number of series available: </h5>
+                <p>{{ event.data.results.0.series.available }}</p>
+                <p>{{ event.data.results.0.characters.name }}</p>
+            </div>
+
+            <div class="table2">
+
+                <h5>Events related to this comics:</h5>        
+                <ul>
+                    {% for comic in comic_name_list %} 
+                    <li>
+                        <a href="/comics/{{comic.data.results.0.id}}">{{comic.data.results.0.title}}</a>  
+                    </li> 
+                    {% else %}
+                        <em>Unbelievable.  No entries here so far</em>               
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="table2">
+
+                <h5>Events related to this creators:</h5>        
+                <ul>
+                    {% for creator in creator_name_list %} 
+                    <li>
+                        <a href="/creators/{{creator.data.results.0.id}}">{{creator.data.results.0.fullName}}</a>  
+                    </li> 
+                    {% else %}
+                        <em>Unbelievable.  No entries here so far</em>               
+                    {% endfor %}
+                </ul>
+            </div>
+
+
+
+     <!--        <div class="dont-break-out">
+                    <h5>External websites:</h5>
+                    <ul>
+                        {% for url in url_list %} 
+                        <li>
+                            <a href="{{url.url}}" class="link" target="_blank">{{url.url}}</a>
+                        </li> 
+                        {% else %}
+                        <em>Unbelievable.  No entries here so far</em>                 
+                    {% endfor %}
+                    </ul>
+            </div> -->
+           <!-- 
+         
+            <div class="table3">
+                <h5> Description: </h5>
+                <p>{% if event.data.results.0.description == "" %}This event does not have a description {% else %}{{event.data.results.0.description}} {% endif %}</p>
+            </div>
+
 {% endblock %}
+
