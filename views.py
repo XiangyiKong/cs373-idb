@@ -81,6 +81,10 @@ def single_series(series_id):
 	series = get_single_series(series_id)
 	return render_template('series.html', title="Title goes here", series=series)
 
+@app.route('/stories')
+def stories():
+	return render_template('generic.html', title='Coming Soon', content="This will be completed in the next phase of this project. Come back soon!")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
