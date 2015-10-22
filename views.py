@@ -49,3 +49,7 @@ def creators():
 def single_creator(creator_id):
 	creator = get_single_creator(creator_id)
 	return render_template('creator.html', title=creator['data']['results'][0]['fullName'], creator=creator)
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
