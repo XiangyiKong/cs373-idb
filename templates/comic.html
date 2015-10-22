@@ -9,7 +9,7 @@
 {% block content %}
 <link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
 
-    <h1> {{ comic.data.results.0.name }} </h1>
+    <h1> {{ comic.data.results.0.title }} </h1>
 
     <div class="picture">
         <img class="img-responsive" align="middle" style="width:250px;height:250px;overflow:hidden" src={{comic.data.results.0.thumbnail.path}}/standard_fantastic.{{comic.data.results.0.thumbnail.extension}} alt="">

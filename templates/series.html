@@ -2,6 +2,106 @@
 
 {% block title %}{{title}}{% endblock %}
 
+{% block extra_css %}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+{% endblock%}
+
 {% block content %}
-{{series}}
+<link href="{{ url_for('static', filename='css/character.css')}}" rel="stylesheet" type="text/css"/>
+
+    <h1> {{ series.data.results.0.title }} </h1>
+
+    <div class="picture">
+        <img class="img-responsive" align="middle" style="width:250px;height:250px;overflow:hidden" src={{series.data.results.0.thumbnail.path}}/standard_fantastic.{{series.data.results.0.thumbnail.extension}} alt="">
+    </div>
+
+    <div class="table1">
+        <p></p>
+        <h5>Number of characters available: </h5>
+        <p>{{ series.data.results.0.characters.available }}</p>
+        <h5>Number of creators available: </h5>
+        <p>{{ series.data.results.0.creators.available }}</p>
+        <h5>Number of comics available:</h5>
+        <p>{{ series.data.results.0.comics.available }}</p>
+        <h5>Number of events available:</h5>
+        <p>{{ series.data.results.0.events.available }}</p>
+        <h5>Number of stories available:</h5> 
+        <p>{{ series.data.results.0.stories.available}}</p>
+    </div>
+
+    <div class="table2">
+        <h5>Character Appears in this series:</h5>        
+        <ul>
+            {% for character in character_name_list %} 
+            <li>
+                <a href="/characters/{{character.data.results.0.id}}">{{character.data.results.0.name}}</a>  
+            </li> 
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>               
+            {% endfor %}
+        </ul>
+
+        <h5>This series includes these comics:</h5>        
+        <ul>
+            {% for comic in comic_name_list %} 
+            <li>
+                <a href="/comics/{{comic.data.results.0.id}}">{{comic.data.results.0.title}}</a>  
+            </li> 
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>               
+            {% endfor %}
+        </ul>
+
+        <h5>This series is created by:</h5>        
+        <ul>
+            {% for creator in creator_name_list %} 
+            <li>
+                <a href="/creators/{{creator.data.results.0.id}}">{{creator.data.results.0.fullName}}</a>  
+            </li> 
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>               
+            {% endfor %}
+        </ul>
+
+        <h5>This series has these events:</h5>        
+        <ul>
+            {% for event in event_name_list %} 
+            <li>
+                <a href="/events/{{event.data.results.0.id}}">{{event.data.results.0.name}}</a>  
+            </li> 
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>               
+            {% endfor %}
+        </ul>
+
+        <!-- <h5>This series includes these stories:</h5>        
+        <ul>
+            {% for series in series_name_list %} 
+            <li>
+                <a href="/series/{{series.data.results.0.id}}">{{series.data.results.0.name}}</a>  
+            </li> 
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>               
+            {% endfor %}
+        </ul> -->
+    </div>
+
+    <div class="dont-break-out">
+        <h5>External websites:</h5>
+        <ul>
+            {% for url in url_list %} 
+            <li>
+                <a href="{{url.url}}" class="link" target="_blank">{{url.url}}</a>
+            </li> 
+            {% else %}
+            <em>Unbelievable. No entries here so far</em>
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="table3">
+        <h5> Description: </h5>
+        <p>{% if series.data.results.0.description == "" %}This series does not have a description {% else %}{{series.data.results.0.description}} {% endif %}</p>
+    </div>
+
 {% endblock %}

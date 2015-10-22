@@ -97,7 +97,40 @@ def series():
 @app.route('/series/<series_id>')
 def single_series(series_id):
 	series = get_single_series(series_id)
-	return render_template('series.html', title="Title goes here", series=series)
+	character_name_list = []
+	for character_url in series['data']['results'][0]['characters']['items']:
+		m = re.match(".+/(?P<character_id>\d+)", character_url['resourceURI'])
+		single_character_name = get_single_character(m.group("character_id"))
+		character_name_list.append(single_character_name)
+
+	comic_name_list = []
+	for comic_url in series['data']['results'][0]['comics']['items']:
+		m = re.match(".+/(?P<comic_id>\d+)", comic_url['resourceURI'])
+		single_comic_name = get_single_comic(m.group("comic_id"))
+		comic_name_list.append(single_comic_name)
+
+	creator_name_list = []
+	for creator_url in series['data']['results'][0]['creators']['items']:
+		m = re.match(".+/(?P<creator_id>\d+)", creator_url['resourceURI'])
+		single_creator_name = get_single_creator(m.group("creator_id"))
+		creator_name_list.append(single_creator_name)
+
+	event_name_list = []
+	for event_url in series['data']['results'][0]['events']['items']:
+		m = re.match(".+/(?P<event_id>\d+)", event_url['resourceURI'])
+		single_event_name = get_single_event(m.group("event_id"))
+		event_name_list.append(single_event_name)
+
+	# story_name_list = []
+	# for story_url in series['data']['results'][0]['stories']['items']:
+	# 	m = re.match(".+/(?P<story_id>\d+)", story_url['resourceURI'])
+	# 	single_story_name = get_single_story(m.group("story_id"))
+	# 	creator_story_list.append(single_story_name)
+
+	url_list = []
+	for series_url in series['data']['results'][0]['urls']:
+		url_list.append(series_url)
+	return render_template('series.html', title="Title goes here", series=series, character_name_list=character_name_list, comic_name_list=comic_name_list, creator_name_list=creator_name_list, event_name_list=event_name_list, url_list=url_list)
 
 @app.route('/stories')
 def stories():
