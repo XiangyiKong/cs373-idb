@@ -1,5 +1,5 @@
 from app import app
-from flask import render_template
+from flask import render_template, jsonify
 from marvel_api import get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic, get_list_of_creators, get_single_creator
 import re
 
@@ -53,3 +53,7 @@ def single_creator(creator_id):
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
+
+@app.route('/api/characters')
+def characters_api():
+	return jsonify(get_list_of_characters())
