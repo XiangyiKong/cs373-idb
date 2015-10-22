@@ -35,14 +35,16 @@
         <p>{{ comic.data.results.0.format }}</p>
         <h5>Page count:</h5>
         <p>{{ comic.data.results.0.pageCount }}</p>
-        <!-- <h5>Character Appears in these comics:</h5>
+        <h5>Comic contains these characters:</h5>
         <ul>
             {% for character in character_name_list %} 
             <li>
                 <a href="/characters/{{character.data.results.0.id}}">{{character.data.results.0.title}}</a>  
-            </li>                
+            </li>   
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>             
             {% endfor %}
-        </ul> -->
+        </ul>
     </div>
 
     <div class="dont-break-out">
@@ -51,7 +53,9 @@
             {% for url in url_list %} 
             <li>
                 <a href="{{url.url}}" class="link" target="_blank">{{url.url}}</a>
-            </li>                
+            </li>
+            {% else %}
+                <em>Unbelievable. No entries here so far</em>           
         {% endfor %}
         </ul>
     </div>

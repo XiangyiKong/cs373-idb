@@ -1,6 +1,6 @@
 from app import app
 from flask import render_template, jsonify, request
-from marvel_api import (get_list_of_characters, get_single_character, get_list_of_comics, get_list_of_events,
+from marvel_api import (get_list_of_characters, get_single_character, get_list_of_comics, get_single_comic, get_list_of_events,
 	get_single_event, get_list_of_series, get_single_series)
 import re
 
@@ -39,17 +39,16 @@ def comics():
 @app.route('/comics/<comic_id>')
 def single_comic(comic_id):
 	comic = get_single_comic(comic_id)
-	# character_name_list = []
-	# for character_url in comic['data']['results'][0]['characters']['items']:
-	# 	m = re.match(".+/(?P<character_id>\d+)", character_url['resourceURI'])
-	# 	single_character_name = get_single_character(m.group("character_id"))
-	# 	character_name_list.append(single_character_name)
+	character_name_list = []
+	for character_url in comic['data']['results'][0]['characters']['items']:
+		m = re.match(".+/(?P<character_id>\d+)", character_url['resourceURI'])
+		single_character_name = get_single_character(m.group("character_id"))
+		character_name_list.append(single_character_name)
 
 	url_list = []
 	for comic_url in comic['data']['results'][0]['urls']:
 		url_list.append(comic_url)
-	# return render_template('comic.html', title=comic['data']['results'][0]['title'], comic=comic, character_name_list=character_name_list, url_list=url_list)
-	return render_template('comic.html', title=comic['data']['results'][0]['title'], comic=comic, url_list=url_list) #TODO: get title of page from comic object/call
+	return render_template('comic.html', title=comic['data']['results'][0]['title'], comic=comic, character_name_list=character_name_list, url_list=url_list)
 
 @app.route('/creators')
 def creators():
@@ -69,12 +68,13 @@ def events():
 @app.route('/events/<event_id>')
 def single_event(event_id):
 	event = get_single_event(event_id)
+	print(event)
 	return render_template('event.html', title=event['data']['results'][0]['title'], event=event)
 
 @app.route('/series')
 def series():
 	series_list = get_list_of_series(**request.args)
-	return render_template('series_list.html', title='Marvel List of Series', series_list=series_list)
+	return render_template('series_list.html', title='Marvel List of Series', series_list=series_list['data']['results'])
 
 @app.route('/series/<series_id>')
 def single_series(series_id):
