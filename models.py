@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
 from sqlalchemy import (Table, Column, Integer, Date, String, ForeignKey, 
     create_engine, MetaData)
-from sqlalchemy.orm import relationship, backref
+from sqlalchemy.orm import relationship, backref, Session
 from sqlalchemy.ext.declarative import declarative_base
 
 Base = declarative_base()
@@ -119,16 +120,16 @@ class Characters(Base):
     thumbnail = Column(Integer, ForeignKey('images.id'))
     url = Column(String)
     comics = relationship("Comics",
-                secondary =lambda: characters_comics_association,
+                secondary = characters_comics_association,
                 backref = "characters")
     stories = relationship("Stories",
-                secondary =lambda: characters_stories_association,
+                secondary = characters_stories_association,
                 backref = "characters")
     events = relationship("Events",
-                secondary =lambda: characters_events_association,
+                secondary = characters_events_association,
                 backref = "characters")
     series = relationship("Series",
-                secondary =lambda: characters_series_association,
+                secondary = characters_series_association,
                 backref = "characters")
 
 class Comics(Base):
@@ -163,13 +164,13 @@ class Comics(Base):
     thumbnail = Column(Integer, ForeignKey('images.id'))
     images = relationship("Images")
     creators = relationship("Creators",
-                secondary =lambda: comics_creators_association,
+                secondary = comics_creators_association,
                 backref = "comics")
     stories = relationship("Stories",
-                secondary =lambda: comics_stories_association,
+                secondary = comics_stories_association,
                 backref = "comics")
     events = relationship("Events",
-                secondary =lambda: comics_events_association,
+                secondary = comics_events_association,
                 backref = "comics")
 
 class Creators(Base):
@@ -191,13 +192,13 @@ class Creators(Base):
     url = Column(String)
     thumbnail = Column(Integer, ForeignKey('images.id'))
     series = relationship("Series",
-                secondary =lambda: creators_series_association,
+                secondary = creators_series_association,
                 backref = "creators")
     stories = relationship("Stories",
-                secondary =lambda: creators_stories_association,
+                secondary = creators_stories_association,
                 backref = "creators")
     events = relationship("Events",
-                secondary =lambda: creators_events_association,
+                secondary = creators_events_association,
                 backref = "creators")
 
 class Events(Base):
@@ -228,10 +229,10 @@ class Events(Base):
     end = Column(Date)
     thumbnail = Column(Integer, ForeignKey('images.id'))
     series = relationship("Series",
-                secondary =lambda: events_series_association,
+                secondary = events_series_association,
                 backref = "events")
     creators = relationship("Creators",
-                secondary =lambda: events_creators_association,
+                secondary = events_creators_association,
                 backref = "events")
     next = Column(String)
     previous = Column(String)
@@ -268,7 +269,7 @@ class Series(Base):
     thumbnail = Column(Integer, ForeignKey('images.id'))
     comics = relationship("Comics", backref="series")
     stories = relationship("Stories",
-                secondary =lambda: series_stories_association,
+                secondary = series_stories_association,
                 backref = "series")
     next = Column(String)
     previous = Column(String)
@@ -298,5 +299,5 @@ class Stories(Base):
     originalIssue = Column(String)
 
 if __name__ == '__main__':
-    engine = create_engine('sqlite://')
+    engine = create_engine('mysql+pymysql://bitsplease:bitsplease@localhost:5000/marvel')
     Base.metadata.create_all(engine)
