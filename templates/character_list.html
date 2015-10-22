@@ -2,9 +2,12 @@
 
 {% block title %}Marvel Characters{% endblock %}
 
-{% block content %}   
+{% block extra_css %}
 <link href="{{ url_for('static', filename='css/table.css')}}" rel="stylesheet" type="text/css"/> 
-    <p>Marvel Characters</p>
+{% endblock%}
+
+{% block content %}   
+    <h1>Marvel Characters</h1>
 	<!-- Table -->
     <div class="box-table">
         <table class="sortable">

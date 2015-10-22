@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Audiowide);
-
+h1 { color: #7c795d; font-family: 'Trocchi', serif; font-size: 45px; font-weight: normal; line-height: 48px; margin: 0; }
 
 /* = table
 ------------------------*/
@@ -66,3 +66,7 @@
   text-align:center;
   margin:0 auto;
 }
+body {
+    background-image: url("paper.gif");
+    background-color: #cccccc;
+} 
