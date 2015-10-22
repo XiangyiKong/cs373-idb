@@ -2,6 +2,7 @@ from app import app
 from flask import render_template, jsonify, request
 from marvel_api import (get_list_of_characters, get_single_character, get_list_of_comics, get_list_of_events,
 	get_single_event, get_list_of_series, get_single_series, get_single_comic, get_list_of_creators, get_single_creator)
+from git_api import get_contributor_list
 import re
 
 @app.route('/')
@@ -10,7 +11,7 @@ def splash():
 
 @app.route('/about')
 def about():
-	return render_template('about.html', title='BitsPlease. We are BitsPlease.')
+	return render_template('about.html', title='BitsPlease. We are BitsPlease.', contributor_list=get_contributor_list)
 
 @app.route('/characters')
 def characters():
