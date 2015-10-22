@@ -52,7 +52,7 @@ h5 { font-family: Enriqueta; font-size: 16px; color: #080000 ; text-decoration: 
 
 p { font-family: Enriqueta; font-size: 14px; color: #92864d; text-decoration: none; }
 
-a,a:visited { font-family: Enriqueta; font-size: 14px; color: #92864d; text-decoration: none; }
+em,a,a:visited { font-family: Enriqueta; font-size: 14px; color: #92864d; text-decoration: none; }
 
 a:hover { text-decoration: underline }
 
