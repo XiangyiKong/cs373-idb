@@ -1,4 +1,5 @@
-from sqlalchemy import Table, Column, Integer, Date, String, ForeignKey
+from sqlalchemy import (Table, Column, Integer, Date, String, ForeignKey, 
+    create_engine, MetaData)
 from sqlalchemy.orm import relationship, backref
 from sqlalchemy.ext.declarative import declarative_base
 
@@ -295,3 +296,7 @@ class Stories(Base):
     storyType = Column(String)
     thumbnail = Column(Integer, ForeignKey('images.id'))
     originalIssue = Column(String)
+
+if __name__ == '__main__':
+    engine = create_engine('sqlite://')
+    Base.metadata.create_all(engine)
