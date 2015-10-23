@@ -37,4 +37,6 @@ import requests
 # 	print("\n")
 
 def get_contributor_list():
-	return requests.get("https://api.github.com/repos/PresidentNick/cs373-idb/stats/contributors").json()
+	contributors = requests.get("https://api.github.com/repos/PresidentNick/cs373-idb/stats/contributors").json()
+	print(contributors)
+	return contributors
