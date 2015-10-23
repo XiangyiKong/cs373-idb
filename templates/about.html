@@ -31,8 +31,8 @@ This team consisted of:<br>
     <td>TEAM LEADERRRR!!</td>
     <td>Bio</td>
     <td>{{contributor_list.4.total}}</td>
-    <td># of issues</td>
-    <td># of unit tests</td>
+    <td>15</td>
+    <td>0</td>
   </tr>
   <tr>
     <td>Erick Cardenas</td>
@@ -40,26 +40,26 @@ This team consisted of:<br>
     <td>Creation of the tests, models, and the api to access those models</td>
     <td>I’m a senior student studying computer science and a research volunteer at the WNCG Lab. I have previous industry experience at Alcatel-Lucent, where I honed my skills in networking and testing. In addition, this last summer I interned at Qualcomm, where I improved my programming skills by designing and implementing an analytics platform using Java. </td>
     <td>{{contributor_list.3.total}}</td>
-    <td># of issues</td>
-    <td># of unit tests</td>
+    <td>1</td>
+    <td>21</td>
   </tr>
   <tr>
     <td>Wei-Chieh Chen</td>
-    <td>photo</td>
-    <td>About page, the page you are staring right now</td>
-    <td>Bio</td>
+    <td><img src="{{ url_for('static', filename='img/WeiChieh_Chen.jpg') }}" alt="Wei-Chieh Chen" style="width:150px;height:150px;"></td>
+    <td>About page, the page you are staring right now, and Creator page</td>
+    <td>I'm a senior Computer Science undergraduate student in University of Texas at Austin and I'm currently pursuing Bachelor of Science degree in Computer Science. I'm interested in Game design and Artificial Intelligence related product such as the programs for smart devices. I also have experience with databases and distributed programming. The programming languages I've worked with are C, C++, Java, SQL, python, and Swift 2.</td>
     <td>{{contributor_list.0.total}}</td>
-    <td># of issues</td>
-    <td># of unit tests</td>
+    <td>2</td>
+    <td>0</td>
   </tr>
   <tr>
     <td>Xiangyi Kong</td>
     <td><img src="{{ url_for('static', filename='img/Xiangyi_Kong.jpg') }}" alt="Xiangyi Kong" style="width:135px;height:180px;"></td>
-    <td>Character, Comic, Creator and Events Page</td>
+    <td>Character page</td>
     <td>I am a senior undergraduate studying computer science at University of Texas at Austin. I have a passion for technology as well as culture and language. I know Java, C, Linux and basic hands-on experience in Android mobile application development</td>
     <td>{{contributor_list.1.total}}</td>
-    <td># of issues</td>
-    <td># of unit tests</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   <tr>
     <td>Xingrong Wu</td>
@@ -67,8 +67,8 @@ This team consisted of:<br>
     <td>Splash page, comics page, and series page</td>
     <td>I'm a senior student majoring in computer science. My main interests focus on software engineering, and I'm also familiar with database and big data. Last summer I interned at Citi Bank in China and helped develop financial model. </td>
     <td>{{contributor_list.2.total}}</td>
-    <td># of issues</td>
-    <td># of unit tests</td>
+    <td>0</td>
+    <td>0</td>
   </tr>
   </tbody>
 </table>
@@ -76,9 +76,9 @@ This team consisted of:<br>
 
 <p>
 Stats:<br>
-Total no. of commits<br>
-Total no. of issues<br>
-Total no. of unit tests<br>
+Total no. of commits: {{contributor_list.0.total+contributor_list.1.total+contributor_list.2.total+contributor_list.3.total+contributor_list.4.total}}<br>
+Total no. of issues: 18<br>
+Total no. of unit tests: 21<br>
 <a href="http://docs.marvel.apiary.io/#introduction/resources">Apiary API</a><br>
 <a href="https://github.com/PresidentNick/marvel/issues">GitHub Issue Tracker</a><br>
 <a href="https://github.com/PresidentNick/marvel">GitHub Repo</a><br>
@@ -88,6 +88,6 @@ Total no. of unit tests<br>
 <p>
 Data source:<br>
 <a href="http://developer.marvel.com/">Marvel Developer Portal</a><br>
-Description of how each was scraped<br>
+Using the Marvel API, we could retrieve the data such as <br>
 </p>
 {% endblock %}
