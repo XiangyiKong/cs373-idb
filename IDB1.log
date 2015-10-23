@@ -1,0 +1,640 @@
+commit 982dc2be1b052c5c41583d5f0c61d096bc2aeca8
+Author: Wei-Chieh Chen <will555413@yahoo.com.tw>
+Date:   Thu Oct 22 20:56:05 2015 -0500
+
+    add Nick's bio and how the data was scraped
+
+commit de805fabbdd275ddb216f8bfc3c659272e0dd5c3
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 20:51:37 2015 -0500
+
+    Added apiary.apib
+
+commit 1ee5e9098441ebff24691a88990e7a0006413b72
+Author: Wei-Chieh Chen <will555413@yahoo.com.tw>
+Date:   Thu Oct 22 20:46:44 2015 -0500
+
+    updated about page with image and bio
+
+commit a940ed52b7110c0de3ec104ecc680e1d7e51a5b7
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 20:43:39 2015 -0500
+
+    Added apiary.apib
+
+commit 44622816a854995ab9f16309973698640d841202
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Thu Oct 22 20:19:53 2015 -0500
+
+    add bio
+
+commit 7ec0c39b957a75c2d252a2778cd16f5d110d44b8
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 19:55:10 2015 -0500
+
+    Add bio for Phoebe
+
+commit b9e538621dc26fbb7c3e3cb4f28802332fa489bd
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 19:14:35 2015 -0500
+
+    Added my bio to about.html
+
+commit b082e10c03f136d4a57f1438522450618c5bd580
+Author: Wei-Chieh Chen <will555413@yahoo.com.tw>
+Date:   Thu Oct 22 17:31:36 2015 -0500
+
+    views.py typo fixed and about page update
+
+commit 1b3ad402565a7efc1bc96d1a863a3efe0d92948d
+Author: Wei-Chieh Chen <will555413@yahoo.com.tw>
+Date:   Thu Oct 22 17:12:53 2015 -0500
+
+    dynamic commit count update: html edits
+
+commit 74356abfa9ee5280140ff89141931fb32d7a5fb2
+Merge: 0a3d03c 6e70294
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 16:58:29 2015 -0500
+
+    Merge branch 'dev' of https://github.com/PresidentNick/cs373-idb into dev
+
+commit 0a3d03c382658ddc33173b7bbd5a92783b089e56
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 16:58:04 2015 -0500
+
+    Update series page
+
+commit 6e702947bb088cd75c86e1a8ed52021b91532b2f
+Merge: 72350bd e320daa
+Author: Nick <PresidentNick@users.noreply.github.com>
+Date:   Thu Oct 22 16:57:31 2015 -0500
+
+    Merge pull request #19 from PresidentNick/dev
+    
+    Dev
+
+commit e320daa4b8bbad59b75b9fe8b74cf190460ca0d2
+Author: Wei-Chieh Chen <will555413@yahoo.com.tw>
+Date:   Thu Oct 22 16:54:04 2015 -0500
+
+    dynamic # of commits for users
+
+commit ecec8ddea438399ebbe2ed79ad777000a4e4191c
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Thu Oct 22 16:45:56 2015 -0500
+
+    fixed imports
+
+commit e1e18086fe9339333896ace529e7d96189ee910a
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Thu Oct 22 16:42:27 2015 -0500
+
+    add event and event list
+
+commit d74557075dfdcaf887a50a2370a47a04b45f0d90
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Thu Oct 22 16:37:09 2015 -0500
+
+    added generic message for stories
+
+commit 16f4eb0d4d27820c1c4f188d8f992906fecec57b
+Author: Wei-Chieh Chen <wc6892@wireless-10-147-226-30.public.utexas.edu>
+Date:   Thu Oct 22 16:35:12 2015 -0500
+
+    views.py fixed
+
+commit 6ccdd07b901744a528d9b1b6c1149e9b70e15be4
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 16:19:25 2015 -0500
+
+    Finished tests
+
+commit cedcb4c37337c77a5ade28dd8ac098e4177b91ab
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 16:12:27 2015 -0500
+
+    Comics page finished
+
+commit 4457c02cbdcf51c25b8acad95683f428be39a7f8
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Thu Oct 22 16:06:45 2015 -0500
+
+    added single series view and page
+
+commit 9d860d3703bf6e9e78fb055d77a8f84588e464a6
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Thu Oct 22 15:59:10 2015 -0500
+
+    wip of series list
+
+commit 95433817aa49b39efb52841eea2d33a7c4f72674
+Merge: 9761329 8d1a315
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 15:46:15 2015 -0500
+
+    Merge branch 'dev' of github.com:PresidentNick/marvel into dev
+
+commit 976132995f0ed5923fd2e671be56b746cda09621
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 15:45:52 2015 -0500
+
+    Added tests.py
+
+commit 8d1a315ee4ce3ce730a1d30be127f3ed388c3faa
+Merge: f7bccb2 a980eb6
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Thu Oct 22 15:45:12 2015 -0500
+
+    Merge branch 'dev' of https://github.com/PresidentNick/marvel into dev
+
+commit f7bccb2e9995b9b9197ab066bfb4c36303051786
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Thu Oct 22 15:44:47 2015 -0500
+
+    update add character pages
+
+commit a980eb64c60ebfd445bc069076830bfb7b91ee63
+Merge: 03ff24e bb48310
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 15:43:36 2015 -0500
+
+    Merge branch 'dev' of https://github.com/PresidentNick/marvel into dev
+
+commit bb48310a1ca24ca1a7f0cb16a7dbb8ff27f4f7f6
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Thu Oct 22 15:42:59 2015 -0500
+
+    added events list and event page
+
+commit 03ff24e858562085e0cc47503a60d1d97c19ce69
+Merge: ad462b7 f5e594c
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 15:42:36 2015 -0500
+
+    Merge branch 'dev' of https://github.com/PresidentNick/marvel into dev
+
+commit ad462b72f186478a505543a523ac6420a535494d
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 15:42:32 2015 -0500
+
+    Update the comic page
+
+commit f5e594cea5e001806b138f52b128c2b9bf0ee96d
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Thu Oct 22 15:33:25 2015 -0500
+
+    added events_list and a way to pass url parameters in other list views
+
+commit 0f987f09ffed9fea4db4546de1363c33741c5ca5
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Thu Oct 22 15:07:40 2015 -0500
+
+    added api methods for existing views
+
+commit 75cce2c05a98780e236563cc9eb893ef871ebf34
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Thu Oct 22 14:56:37 2015 -0500
+
+    added character list api
+
+commit 2992dd59aa100b85bd451c808b42141ad71c66ed
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 14:14:42 2015 -0500
+
+    Make page compatible with different mobile devices
+
+commit 2813f847e29ceabb91c6c46261b459677a906967
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Thu Oct 22 13:58:38 2015 -0500
+
+    Splash page finished!
+
+commit df8c04e278749e805891fa9fed29fe11ceaaa3eb
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 12:42:53 2015 -0500
+
+    Delete models.html
+
+commit 494f0edb6da07faf326fd3a0c88b0e0cabbbf007
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 12:41:51 2015 -0500
+
+    Rename models.html to model.html
+
+commit 863f6f322829024c851ecd8cb9c380ac8e5acd94
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 10:49:59 2015 -0500
+
+    Added models.html, fixes #15
+
+commit 1978f6ba602230464db977bfc4c1bdb759f09614
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Thu Oct 22 10:47:32 2015 -0500
+
+    Added main
+
+commit f959faca23c844c6ec242cc989c08e7ffc8de6e2
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Wed Oct 21 22:28:17 2015 -0500
+
+    update comic_list and creator_list.html
+
+commit 712767a69a6b3f295637651a0186f814129ea938
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Wed Oct 21 22:07:02 2015 -0500
+
+    fixed #18 and change character page styles
+
+commit dce4572acaa79924ca837deaecc238c76a12140b
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Wed Oct 21 21:55:08 2015 -0500
+
+    added custom 404 page
+
+commit ce007d43414bc8ddee8cb4bcf7fd38c54ae57f65
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 20:14:37 2015 -0500
+
+    Redid my changes
+
+commit 16393cc4b3c9365c9b42e0bfe24f8f8a3743701c
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 20:07:12 2015 -0500
+
+    Added main method to models.py
+
+commit c40d2bf324e40775620028bf7dcd808a1afec7d8
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 19:58:53 2015 -0500
+
+    Redid my changes
+
+commit 3936c80fee35a74e6d2aa34b215aa6880d582747
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 17:41:34 2015 -0500
+
+    Added String
+
+commit be95fada743401e7fb10ae09d8235065e8b0f3d9
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 17:23:31 2015 -0500
+
+    Added makefile
+
+commit 4510d9c36c4098bb9a095a699517fc5f9a414131
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 17:20:05 2015 -0500
+
+    Remove spaces
+
+commit a05b8dbcd795c66a43b0b40bb49dddb557e9f027
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Wed Oct 21 16:21:33 2015 -0500
+
+    Splash page works fine on mobile devices except for the burger menu
+
+commit c8174862c1fcb23ffdd0835aef976c3e47ba7234
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Wed Oct 21 16:18:06 2015 -0500
+
+    update comic/web links in character
+
+commit 4a42edce66d40c8ef91e5358b26ed8dbd4ba495d
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 15:43:10 2015 -0500
+
+    Added makefile, fixes #16
+
+commit 29d29452d13bb510e67a0eb4e7ac5285d73296d6
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Wed Oct 21 15:38:27 2015 -0500
+
+    added UML as image
+
+commit 2de42e439d516929e148c6a77c26beaf2d4c8c51
+Author: Wei-Chieh Chen <wc6892@wireless-10-146-30-49.public.utexas.edu>
+Date:   Wed Oct 21 15:31:57 2015 -0500
+
+    about.html mobile version prototype 1
+
+commit cd0a3fa151d9e582520f1fb7d3e4bacaf95c7c54
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Wed Oct 21 15:22:52 2015 -0500
+
+    models.py is done, fixes #5
+
+commit a0199bde6ca82a6fe17e1619e193c5e72fa6317b
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Wed Oct 21 14:26:11 2015 -0500
+
+    list of comics appears in character page
+
+commit 21a73a10c559a98e64f2193ecf671d51944e9590
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Wed Oct 21 14:12:27 2015 -0500
+
+    views wip
+
+commit 1f73d2f2c3f67e332100b5e0f181e402708d10bd
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Tue Oct 20 17:54:26 2015 -0500
+
+    Added comments about the relationships and models
+
+commit d7d19ccb8fe6338ca1452de8dd95c218d76a70bb
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Tue Oct 20 17:45:10 2015 -0500
+
+    Added associations tables
+
+commit f6ed039e7d4d443c7dff519c0d1b4c1e491ca2be
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Tue Oct 20 00:23:34 2015 -0500
+
+    Update comic.html
+
+commit 90411f9d7f85af8c3242338e373b8f7df2858a26
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Mon Oct 19 16:34:21 2015 -0500
+
+    fixed clickable rows in character list
+
+commit 1948c872fee817ccbab29dfe3334244ca4c16936
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Mon Oct 19 01:15:47 2015 -0500
+
+    fixed broken sorting on name and disabled sorting on photo column
+
+commit 9f0d51b3a07250e79f91ba932fdb0ed88dcf3b0e
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Mon Oct 19 01:04:44 2015 -0500
+
+    added jquery to base template and made table rows clickable in character list page
+
+commit 44c4943f82f32778c84b704321af0c5c81f8d0df
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Mon Oct 19 00:58:14 2015 -0500
+
+    add table.css
+
+commit 2b78bd7172b6416c170a25b7401d9cfc0c87a23c
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Mon Oct 19 00:24:17 2015 -0500
+
+    change photo size
+
+commit 914c377daa2e0210d0be5fc08b71a9a7f9302360
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Mon Oct 19 00:20:50 2015 -0500
+
+    Add more features in character pages
+
+commit 558abba79ee55f559d5fd69d4ca87d26d2116448
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Sun Oct 18 20:25:19 2015 -0500
+
+    Update characte pages
+
+commit 79796adc5c809770052c28d849a3fa002c08e8d2
+Author: Wei-Chieh Chen <wc6892@Wei-Chiehs-MacBook-Pro.local>
+Date:   Sun Oct 18 17:10:04 2015 -0500
+
+    fixed minor title retrieval errors
+
+commit 4bb904d65756e4894281670645001cc05eedc056
+Author: Wei-Chieh Chen <wc6892@wireless-10-146-224-20.public.utexas.edu>
+Date:   Sun Oct 18 16:25:06 2015 -0500
+
+    edited responsibilities in about.html; allow title to show up in all htmls; added creator
+
+commit 14e7d97babbcb38ca7640746cc7207388a88a109
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Sun Oct 18 14:45:13 2015 -0500
+
+    Added Stories model
+
+commit 1dbb6c6e57b5e22af50a1f6cec929d9380a37aaf
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Sun Oct 18 14:39:28 2015 -0500
+
+    Added Series model
+
+commit 8b5363043b6c5f6d3c0307ce27d4d293964525bb
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Sun Oct 18 14:35:16 2015 -0500
+
+    Added Events model
+
+commit 08aaec55777f8bedc67a9b7898c93d84b119a9fd
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Sun Oct 18 14:31:24 2015 -0500
+
+    Update css
+
+commit abf8c88d8c4cb27aed5fd6e5c065caa46d7aeee1
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Sun Oct 18 14:30:08 2015 -0500
+
+    Added Creators model
+
+commit 8a3338220e1782924a56c7c74cef34f1a63112c6
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Sun Oct 18 14:27:40 2015 -0500
+
+    Added Comics model
+
+commit 64e02dc9cbdd8bb41dcf49369cb5bc1637f5acf0
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Sun Oct 18 14:07:41 2015 -0500
+
+    restructured project filesystem to match requirements
+
+commit 3c40789a0b7ed6b9149dff9f10a2767de05f0f11
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Sun Oct 18 14:00:55 2015 -0500
+
+    modified requirements file
+
+commit 5447a0f7cd57e6bd009a67bb8d69bb2fca50ce81
+Author: Wei-Chieh Chen <wc6892@wireless-10-146-224-20.public.utexas.edu>
+Date:   Sun Oct 18 12:37:57 2015 -0500
+
+    about page: photo added and Apiary link fixed
+
+commit 1a0e5f9354b90c054ea55b6a9433bb3577433175
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Sun Oct 18 12:22:13 2015 -0500
+
+    Added Erick image
+
+commit ab3fdcdaa92c610dcb67b5f3993da026dda315ed
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Sun Oct 18 10:58:09 2015 -0500
+
+    Created models.py file
+
+commit 5c2e3d4fd83c0c89457d3ab675a08ef7e13bb022
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Sat Oct 17 23:14:36 2015 -0500
+
+    modified character and comic list templates to have links towards the objects, added attribution to footer
+
+commit ebb6ea102111b4c7b57fcc0e558eb5128751038a
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Sat Oct 17 21:59:11 2015 -0500
+
+    created a view for the about page
+
+commit 9316a07d1c07c7f0965554ead355434194418397
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Sat Oct 17 21:48:43 2015 -0500
+
+    added a skeleton template for a single comic
+
+commit 24c976529270decf6f1343013c8f88a0cf073512
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Sat Oct 17 21:38:15 2015 -0500
+
+    added an interface to retrieve a list of comics
+
+commit 72350bd83635d70aa778a3bfbb96a756c701031e
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Fri Oct 16 19:23:59 2015 -0500
+
+    Splash updated
+
+commit e305b58030053cf779572f7727e93239dcd48741
+Author: phoebe0607 <phoebewu@utexas.edu>
+Date:   Fri Oct 16 18:37:04 2015 -0500
+
+    Splash page added
+
+commit 89a3c1e0da018925583fab929f2e86c82e5435ef
+Author: Wei-Chieh Chen <wc6892@wireless-10-146-224-20.public.utexas.edu>
+Date:   Fri Oct 16 18:33:02 2015 -0500
+
+    test file removed
+
+commit f39b0bd3309bd7441f52fd168cf9cda85c5aacd2
+Author: Wei-Chieh Chen <wc6892@wireless-10-146-224-20.public.utexas.edu>
+Date:   Fri Oct 16 18:30:46 2015 -0500
+
+    about page and img folder added
+
+commit 88f26bba47f023aa2d05822f23e5df1b513cfc29
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 17:50:41 2015 -0500
+
+    added hash to single character cal
+    l
+
+commit 300a9e59ce3f1bd39c5f79abaa0c9d76ea840d51
+Merge: bc32bde 40949a1
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 17:48:35 2015 -0500
+
+    Merge branch 'dev' of github.com:PresidentNick/marvel into dev
+
+commit bc32bded8f2ec6f4f0906c17afa5acacc9cb081e
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 17:46:59 2015 -0500
+
+    setup framework for single character
+
+commit 40949a18ed1e781b2685681d95db0ae094fb1492
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Fri Oct 16 17:40:15 2015 -0500
+
+    Delete UML.txt, we only need the pdf
+
+commit e63e9d463f35ca6310ed174d04de676b90bbd5ec
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Fri Oct 16 17:39:44 2015 -0500
+
+    Added UML.pdf, fixes #4
+
+commit 16d63742802bef143a3ea68e7ada26da7d31d295
+Merge: 0fa1ab9 c396cdc
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Fri Oct 16 17:38:10 2015 -0500
+
+    Merge branch 'dev' of https://github.com/PresidentNick/marvel into dev
+
+commit c396cdc3c77bb7ec7a74f504b5abc4468b75b8c3
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 17:37:49 2015 -0500
+
+    added ids to character list
+
+commit 0fa1ab9bddb5cca326f7682293848e59d3756be7
+Author: Erick Cardenas <ecardenas@utexas.edu>
+Date:   Fri Oct 16 17:37:44 2015 -0500
+
+    Modified .gitignore to ignore UML.txt
+
+commit 902edb4a4b7495a029ab191395c850b4d6a010f0
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 17:36:03 2015 -0500
+
+    fixed same method name error
+
+commit 9c23c3b2f5f39d12e5782fabcaf5db6fa9a681e6
+Author: Xiangyi Kong <barbara.kong16@utexas.edu>
+Date:   Fri Oct 16 17:31:21 2015 -0500
+
+    fixed merge conflic
+
+commit 257f7cf7ad24290c6fcda6fded459474dacaec79
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 17:18:40 2015 -0500
+
+    updated requirements list
+
+commit 5253d16de2ffaff74e17e52f537cde8aa56c9080
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 17:15:04 2015 -0500
+
+    created a way to retrieve a list of characters
+
+commit 18d563c7980156e2d9467a0142dbdb9359c45142
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Fri Oct 16 16:15:43 2015 -0500
+
+    created base template for our site
+
+commit 707fdf928c318c65ab2f5f01c314305385cfb596
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Wed Oct 14 00:38:42 2015 -0500
+
+    updated readme instructions
+
+commit a2ed328d7cc48707b1dfe40797b78ce0d9cb55cc
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Wed Oct 14 00:33:51 2015 -0500
+
+    changed the way secret key is loaded
+
+commit 9ab52c2652f5c0dc27e03ddae409ed260f3c8e46
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Wed Oct 14 00:27:17 2015 -0500
+
+    set up skeleton structure for running site
+
+commit 488d506bba87669fd9c7ec79f642ef7d5e741d8e
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Tue Oct 13 23:47:04 2015 -0500
+
+    added a file where we will write functions that will help us interact with the marvel api
+
+commit 5d83e165b94fa7503ec7e372158a9bdb9eb30667
+Author: Nick <nickpereira.np@gmail.com>
+Date:   Tue Oct 13 13:21:08 2015 -0500
+
+    modified gitignore to ignore local.py
+
+commit 73310f244a89a1bcea5c8152d4f0fb99a4085051
+Author: Nick <PresidentNick@users.noreply.github.com>
+Date:   Mon Oct 12 23:39:19 2015 -0500
+
+    Initial commit
